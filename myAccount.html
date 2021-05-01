@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='css/headerandfooter.css'>
         <link rel='stylesheet' href='css/accountcontentsStyle.css'>
+        <link rel='stylesheet' href='css/formvalidation.css'>
         <script src="https://kit.fontawesome.com/13954ad90d.js" crossorigin="anonymous"></script>
         <title>Sign In</title>
     </head>
@@ -24,7 +25,7 @@
                         <a class="link" href="index.html">Home</a>
                         <a class="link" href="aboutus.html">About us</a>
                         <a class="link" href="fees.html">Fees</a>
-                        <a class="link" href="myAccount.html">My account</a>
+                        <a class="link" id = "account" href="myaccount.html">My account</a>
                         <a class="link" href="browseproducts.html">Browse</a>
                         <a class="link" href="faq.html">FAQs</a>
                         <a class="link" href="contact.html">Contact</a>
@@ -37,11 +38,13 @@
             <div id="signCont">
                 <div id="signInCont">
                     <h2>Sign In</h2>
-                    <form id="signInForm" action="signin.php" method="POST">
+                    <form id="signInForm" method ="post" action="mypage.html" onsubmit="return loginValidation();">
                         <label for="signInId"><span>Email or Phone number:</span></label>
                         <input type="text" id="uId" name="uId" placeholder="example@rmit.edu.vn OR 123456789" required/>
+                        <ul class="errCont invalidForm validForm" id="olEmail"></ul>
                         <label for="signInPsw"><span>Password:</span></label>
                         <input type="password" id="uPsw" name="uPsw" placeholder="Enter your password." autocomplete="off" required/>
+                        <ul class="errCont invalidForm validForm" id="olPw"></ul>
                         <input type="submit" value="Sign In"/>
                     </form>
                     <p><a href="forgotpassword.html">Forgot Password ?</a></p>
@@ -68,5 +71,8 @@
                 <span class="des">Privacy Policy</span>
             </a>
         </footer>
+        <script type="text/javascript" src="js/formvalidation.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <noscript>It seems like your browser does not support JavaScript. Please check again.</noscript>
     </body>
 </html>

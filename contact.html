@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='css/contactStyle.css'>
         <link rel='stylesheet' href='css/headerandfooter.css'>
+        <link rel='stylesheet' href='css/formvalidation.css'>
         <script src="https://kit.fontawesome.com/13954ad90d.js" crossorigin="anonymous"></script>
         <title>Contact Us</title>
     </head>
@@ -24,7 +25,7 @@
                         <a class="link" href="index.html">Home</a>
                         <a class="link" href="aboutus.html">About us</a>
                         <a class="link" href="fees.html">Fees</a>
-                        <a class="link" href="myAccount.html">My account</a>
+                        <a class="link" href="myaccount.html">My account</a>
                         <a class="link" href="browseproducts.html">Browse</a>
                         <a class="link" href="faq.html">FAQs</a>
                         <a class="link" href="contact.html">Contact</a>
@@ -33,27 +34,28 @@
             </div>
         </header>
         <main id="mainReg">
-           
+
             <!--Contact Form-->   
             <section id="allFormCont">
                 <h1>Contact Us</h1>
-                <form id="registerForm" action="register.php" method="POST">
+                <form id="signInForm" method ="post" action="contact.html" onsubmit="return contactValidation();">
                     <label><h3>Contact purpose</h3></label>
                     <select id="type" name="type">
                         <option value="1">Lease</option>
                         <option value="2">Feedback</option>
                         <option value="3">Employment</option>
                     </select>
-                    <label for="email"><h3>Email:</h3></label>
-                    <input type="text" id="fName" name="fName" required>
-                    <label for="lName"><h3>Last Name:</h3></label>
-                    <input type="text" id="lName" name="lName" required>
+                    <label for="txtEmail"><h3>Email:</h3></label>
+                    <input type="text" id="txtEmail" name="fName" required>
+                    <ul class="errCont invalidForm validForm" id="ulEmail"></ul>
+                    <label for="txtUserName"><h3>Last Name:</h3></label>
+                    <input type="text" id="txtUserName" name="lName" required>
+                    <ul class="errCont invalidForm validForm" id="ulName"></ul>
                     <label for="address"><h3>Address:</h3></label>
                     <input type="text" id="address" name="address">
-                    <label for="email"><h3>Email:</h3></label>
-                    <input type="email" id="rEmail" name="rEmail" required>
-                    <label for="phoneNvm"><h3>Phone Number:</h3></label>
-                    <input type="text" id="rPhoneNvm" name="rPhoneNvm" required>
+                    <label for="txtPhone"><h3>Phone Number:</h3></label>
+                    <input type="text" id="txtPhone" name="rPhoneNvm" required>
+                    <ul class="errCont invalidForm validForm" id="ulPhone"></ul>
                     <h3>Preferred contact method:</h3>
                     <div class=radio>
                         <input type="radio" id="prePhone" name="pre" value="prePhone" class=radioInput>
@@ -71,10 +73,8 @@
                         <label for="day3" class=checkboxLabel> Wednesday</label>
                         <input type="checkbox" id="day4" name="contactDay" value="Thu" class=checkboxInput>
                         <label for="day4" class=checkboxLabel> Thursday</label>
-
                     </div>
-                    <div class=checkbox>
-                       
+                    <div class=checkbox> 
                         <input type="checkbox" id="day5" name="contactDay" value="Fri" class=checkboxInput>
                         <label for="day5" class=checkboxLabel> Friday</label>
                         <input type="checkbox" id="day6" name="contactDay" value="Sat" class=checkboxInput>
@@ -83,13 +83,7 @@
                         <label for="day7" class=checkboxLabel> Sunday</label>
                     </div>
                     <label for="mess"><h3>Message</h3> </label>
-                            <textarea id="mess" name="Message" placeholder="Leave Us A Message!"></textarea>
-                        
-
-
-                    
-                   
-
+                    <textarea id="mess" name="Message" placeholder="Leave Us A Message!"></textarea>
                     <!--Below Btn-->
                     <div id="submitBtnCont">
                         <input type="reset" value="Clear"/>
@@ -113,5 +107,8 @@
                 <span class="des">Privacy Policy</span>
             </a>
         </footer>
+        <script type="text/javascript" src="js/formvalidation.js"></script>
+        <script type="text/javascript" src="js/contact.js"></script>
+        <noscript>It seems like your browser does not support JavaScript. Please check again.</noscript>
     </body>
 </html>

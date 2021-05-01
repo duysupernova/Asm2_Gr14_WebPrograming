@@ -1,0 +1,8 @@
+/* JS */
+.validForm{
+    background-color: green;
+};
+
+.invalidForm{
+    background-color: red;
+}
