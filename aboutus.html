@@ -24,7 +24,7 @@
             <a class="link" href="index.html">Home</a>
             <a class="link" href="aboutus.html">About us</a>
             <a class="link" href="fees.html">Fees</a>
-            <a class="link" href="accountContents/myAccount.html">My account</a>
+            <a class="link" href="accountContents/myaccount.html">My account</a>
             <a class="link" href="browseproducts.html">Browse</a>
             <a class="link" href="faq.html">FAQs</a>
             <a class="link" href="contact.html">Contact</a>
@@ -38,7 +38,7 @@
       <section>
         <!--Team Title-->
         <div class="cont">
-          <img src="../Asm2_Gr14_WebPrograming/New_products/aboutUs.jpg" alt="This picture shows the four hands holding the fists against each other.">
+          <img src="New_products/aboutUs.jpg" alt="This picture shows the four hands holding the fists against each other.">
           <div class="overlay">
             <h1>About Us</h1>
           </div>
@@ -46,7 +46,7 @@
 
         <!--Our Story-->
         <div id= "usStoryCont" class="teamBox usBox">
-          <img src="../Asm2_Gr14_WebPrograming/New_products/ourStory.jpg" alt="This picture shows a team meeting which a few laptops.">
+          <img src="New_products/ourStory.jpg" alt="This picture shows a team meeting which a few laptops.">
           <div id="storyCont">
             <h2>Our Story</h2>
             <p>
@@ -65,21 +65,21 @@
           <div id="usTeamAllCont">
             <div class="usTeamWhyCont">
               <div class="usTeamIconCont">
-                <img src="../Asm2_Gr14_WebPrograming/New_products/icon/delivery.png" alt="It's an icon that shows the truck moving forward.">
+                <img src="New_products/icon/delivery.png" alt="It's an icon that shows the truck moving forward.">
                 <h3>Fast Delivery</h3>
               </div>
               <p>The enterprise provides fast delivery by contracting with FedEx and other ten delivery companies.</p>
             </div>
             <div class="usTeamWhyCont">
               <div class="usTeamIconCont">
-                <img src="../Asm2_Gr14_WebPrograming/New_products/icon/good-quality.png" alt="This is a thumbs up sign icon.">
+                <img src="New_products/icon/good-quality.png" alt="This is a thumbs up sign icon.">
                 <h3>Good Quality</h3>
               </div>
               <p>The enterprise offers high-quality products from solemnly chosen stores.</p>
             </div>
             <div class="usTeamWhyCont">
               <div class="usTeamIconCont">
-                <img src="../Asm2_Gr14_WebPrograming/New_products/icon/cheap.png" alt="The icon shows the coins on top of hands.">
+                <img src="New_products/icon/cheap.png" alt="The icon shows the coins on top of hands.">
                 <h3>Affordable Price</h3>
               </div>
               <p>The enterprise supply cost-effective products.</p>
@@ -92,16 +92,34 @@
       <section id="aboutUsmemberPfl">
         <!--Title-->
         <div class="cont">
-          <img id="teamPic" src="../Asm2_Gr14_WebPrograming/New_products/teaminfo.jpg" alt="It's an illustration of eight people with a confident facial expression.">
+          <img id="teamPic" src="New_products/teaminfo.jpg" alt="It's an illustration of eight people with a confident facial expression.">
           <div class="overlay">
             <h1>Meet Our Team</h1>
+          </div>
+        </div>
+
+        <!--Modal-->
+        <div class="modalCont">
+          <div class="modalContent">
+            <div class="modalHead">
+              <h2>More Information</h2>
+              <button class="modalCloseBtn" type="button">Close</button>
+            </div>
+            <div class="modalBody">
+              <h3>Motto</h3>
+              <p id="motto"></p>
+              <h3>Role Model</h3>
+              <p id="roleModel"></p>
+              <h3>MBTI</h3>
+              <p id="mbti"></p>
+            </div>
           </div>
         </div>
 
         <!--Each member profile-->
         <div class="oneMemberPfl usBox">
           <div class="usContact">
-            <img src="../Asm2_Gr14_WebPrograming/New_products/profilePicDaniel.jpg" alt="Nguyen Ha Minh Duy's portrait">
+            <img class= "modalOpenBtn daniel" src="New_products/profilePicDaniel.jpg" alt="Nguyen Ha Minh Duy's portrait">
             <h2>Nguyen Ha Minh Duy</h2>
             <div class="departmentInfo">
               <p>RMIT</p>
@@ -164,7 +182,7 @@
             </div>
           </div>
           <div class="usContact">
-            <img src="../Asm2_Gr14_WebPrograming/New_products/profilePicLiz.jpg" alt="Lee Gain's portrait">
+            <img class= "modalOpenBtn liz" src="New_products/profilePicLiz.jpg" alt="Lee Gain's portrait">
             <h2>Lee Gain</h2>
             <div class="departmentInfo">
               <p>RMIT</p>
@@ -180,7 +198,7 @@
         </div>
         <div class="oneMemberPfl usBox">
           <div class="usContact">
-            <img src="../Asm2_Gr14_WebPrograming/New_products/profilePicKhang.jpg" alt="Tran Vinh Khang's portrait">
+            <img class= "modalOpenBtn Khang" src="New_products/profilePicKhang.jpg" alt="Tran Vinh Khang's portrait">
             <h2>Tran Vinh Khang</h2>
             <div class="departmentInfo">
               <p>RMIT</p>
@@ -243,7 +261,7 @@
             </div>
           </div>
           <div class="usContact">
-            <img src="../Asm2_Gr14_WebPrograming/New_products/profilePicSuk.jpg" alt="Jang Moon Suk's portrait">
+            <img class= "modalOpenBtn suk" src="New_products/profilePicSuk.jpg" alt="Jang Moon Suk's portrait">
             <h2>Jang Moon Suk</h2>
             <div class="departmentInfo">
               <p>RMIT</p>
@@ -264,6 +282,7 @@
       <a class="footer-link" href="copyright.html">
         <i class="far fa-copy"></i>
         <span class="des">CopyRight</span>
+
       </a>
       <a class="footer-link" href="tos.html">
         <i class="fas fa-concierge-bell"></i>
@@ -274,5 +293,7 @@
         <span class="des">Privacy Policy</span>
       </a>
     </footer>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <noscript>It seems like your browser does not support JavaScript. Please check again.</noscript>
   </body>
 </html>
