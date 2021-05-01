@@ -1,0 +1,101 @@
+@font-face {
+  font-family: title;
+  src: url(../fonts/ProzaLibre-Regular.ttf);
+}
+
+@font-face {
+  font-family: body;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('../New_products/purple-background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    font-family: body, Times, serif;
+    }
+
+h1, h2, h3 {
+    font-family: title, Times, serif;
+}
+
+h1 {
+  text-align: center;
+  background-image: white;
+  font-size: 50px;
+  color: black;
+  padding: 60px;
+}
+
+.sub-title{
+  text-align: center;
+  font-size: 20px;
+}
+
+#content {
+  height: auto;
+  margin: 5% 0;
+}
+
+summary {
+  font-size: 1.25rem;
+  font-weight: 600;
+  background-color: #fff;
+  color: #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border-radius: 0.25rem;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+details {
+  margin: 0 5%;
+}
+
+details > summary::after {
+  position: absolute;
+  content: "+";
+  right: 20px;
+}
+details > summary::after {
+  position: absolute;
+  content: "-";
+  right: 20px;
+}
+
+#title {
+    font-size: 50px;
+    color: tomato;
+    text-align: center;
+    
+  }
+.sub-title{
+  font-size: 35px;
+
+}
+p{
+  font-size: 20px;
+  
+}
+
+iframe {
+  width: 50%;
+  height: 200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:780px) {
+    .pricing-table{
+      flex: 100%;
+    }
+  }
+

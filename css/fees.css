@@ -1,0 +1,152 @@
+
+@font-face {
+  font-family: title;
+  src: url(../fonts/ProzaLibre-Regular.ttf);
+}
+
+@font-face {
+  font-family: body;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family:body, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  background-image: url('../New_Products/blue-background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  }
+
+h1, h2 {
+  font-family: title, Times, serif;
+}
+
+h1 {
+  text-align: center;
+  background-image: white;
+  font-size: 50px;
+  color: black;
+  padding: 60px;
+}
+h2 {
+  text-align: center;
+  background-image: white;
+  font-size: 30px;
+  color: white;
+  padding: 30px;
+}
+
+section {
+  margin: 5% 0;
+}
+
+.content{
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pricing-table{
+  background: #fff;
+  flex: 1;
+  margin: 12px;
+  text-transform: uppercase;
+}
+
+.pricing-header{
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.price{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.price span{
+  font-size: 30px;
+}
+
+.title{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+  width: 80%;
+  max-width: 360px;
+  text-align: center;
+  padding: 7px;
+  font-size: 14px;
+  color: black;
+  background-color: rgb(215, 215, 255);
+}
+
+.pricing-list{
+  padding: 10px 20px;
+}
+
+.pricing-list li{
+  margin: 8px 0;
+  font-size: 10px;
+  color: #344;
+  text-align: center;
+}
+
+.border{
+  width: 80px;
+  height: 1px;
+  background: #ddd;
+  margin: auto;
+}
+
+.pricing-table a{
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  border: 1px solid;
+  max-width: 360px;;
+}
+
+.table1 .pricing-header{
+  background: #2980b9;
+}
+.table2 .pricing-header{
+  background: #2c3e50;
+}
+.table3 .pricing-header{
+  background: #c0392b;
+}
+
+.table1 a{
+  color: #2980b9;
+}
+.table2 a{
+  color: #2c3e50;
+}
+.table3 a{
+  color: #c0392b;
+}
+
+@media screen and (max-width:780px) {
+  .pricing-table{
+    flex: 100%;
+  }
+}

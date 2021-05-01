@@ -1,0 +1,159 @@
+@font-face {
+    font-family: title;
+    src: url(../fonts/ProzaLibre-Regular.ttf);
+    }
+@font-face {
+    font-family: body;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+:root {
+    /* Colors */
+    --signIn-span:#606e83;
+
+    /* Font Size */
+    --h2-font-size:1.875rem;
+    --span-font-size:0.875rem;
+    --input-font-size: 1rem;
+    --btn-font-size:1rem;
+
+    /* Size */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#mainPW{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h2 {
+    width:100%;
+    text-align: center;
+    font-family: title, Times, serif;
+    font-size:var(--h2-font-size);
+}
+
+input {
+    width: 100%;
+    margin: 3% 0;
+    border-bottom: 1px solid grey;
+    font-size:var(--input-font-size);
+    text-align: left;
+    display: block;
+}
+
+label{
+    width: 100%;
+    margin: 10% auto;
+    text-align:left;
+    display:block;
+}
+
+label p, #mainRegister p {
+    font-size:var(--span-font-size);
+    font-weight:600;
+    color:var(--signIn-span);
+}
+
+input[type="submit"]{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color:whitesmoke;
+    text-align: center;
+    font-size:var(--btn-font-size);
+    font-weight: 600;
+    font-family: title;
+    cursor:pointer;
+    background: -webkit-linear-gradient(right, #4981af, #5933c2);
+}
+
+input[type="submit"]:hover{
+    background: -webkit-linear-gradient(left, #4981af, #5933c2);
+}
+
+input[type="submit"]:active {
+    transform: skewX(0.5);
+    -webkit-transform: skewX(0.5);
+    -moz-transform: skewX(0.5);
+    -ms-transform: skewX(0.5);
+    -o-transform: skewX(0.5);
+}
+
+input:invalid {
+    border-bottom: 2px solid rgb(241, 68, 37);
+}
+
+input:valid {
+    border-bottom: 2px solid rgb(53, 97, 36);
+}
+
+#pwCont {
+    width: 410px;
+    height: 267px;
+    padding: 30px;
+    background-color:snow;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainPW h2 {
+    margin-bottom: 3%;
+    font-size: 2rem;
+}
+
+#mainPW p {
+    margin-bottom: 5%;
+    color: grey;
+}
+
+#pwCont input[type="submit"]{
+    border: none;
+}
+
+@media only screen and (max-width:767px){
+    #pwCont {
+        margin: 10%;
+    }
+
+    #pwCont h2 {
+        font-size: 1rem;
+    }
+
+    #pwCont p {
+        font-size: 0.8rem;
+    }
+
+    #pwCont #signInForm, #signInForm input[type="submit"]{
+        margin-top: 10%;
+    }
+}

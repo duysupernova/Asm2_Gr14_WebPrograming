@@ -1,0 +1,99 @@
+@font-face {
+    font-family: title;
+    src: url(../fonts/ProzaLibre-Regular.ttf);
+    }
+@font-face {
+    font-family: body;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 70vw;
+    margin: 5% 15%;
+}
+
+section {
+    margin-bottom: 5%;
+    padding: 10% 5%;
+    background-color: snow;
+}
+
+.titleCont, .info {
+    display: flex;
+}
+
+.titleCont {
+    padding: 10% 3%;
+    padding-top: 0;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+#profilePic{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#mypageMain img {
+    width: 10%;
+    height: 10%;
+}
+
+section {
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+h2 {
+    font-family:title, Times, serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h3 {
+    font-family:title, Times, serif;
+    text-transform: uppercase;
+    color: darkgrey;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+p {
+    font-family: body, Times, serif;
+    font-size: 1.0rem;
+}
+
+.info {
+    padding: 3%;
+    border-bottom: 1px solid darkgrey;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width:767px){
+    h2{
+        font-size: 1rem;
+    }
+
+    h3{
+        font-size: 0.5rem;
+    }
+
+    p{
+        font-size: 0.6rem;
+    }
+}

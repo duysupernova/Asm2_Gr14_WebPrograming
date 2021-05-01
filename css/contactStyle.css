@@ -1,0 +1,405 @@
+@font-face {
+    font-family: title;
+    src: url(../fonts/ProzaLibre-Regular.ttf);
+    }
+@font-face {
+    font-family: body;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+:root {
+    /* Colors */
+    --signIn-span:#606e83;
+
+    /* Font Size */
+    --h1-font-size:2.5rem;
+    --h2-font-size:1.875rem;
+    --h3-font-size:0.875rem;
+    --p-font-size:0.8rem;
+    --span-font-size:0.875rem;
+    --input-font-size: 1rem;
+    --btn-font-size:0.938rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: body, Times, serif;
+}
+
+#mainSignIn, #mainReg, #mainPW{
+    height: auto;
+    padding: 2% 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+form {
+    margin-left: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: title, Times, serif;
+    font-size:var(--h1-font-size);
+}
+
+h2 {
+    text-align: left;
+    font-family: title, Times, serif;
+    font-size:var(--h2-font-size);
+}
+
+::-webkit-input-placeholder {
+    font-size:0.8rem;
+}
+
+:-ms-input-placeholder {
+    font-size:0.8rem;
+}
+
+::placeholder {
+    font-size:0.8rem;
+}
+
+main label, #mainReg h3, #mainReg h2, #mainReg p{
+    width: 100%;
+    margin: 10px auto;
+    text-align:left;
+    display:block;
+    
+}
+input, select {
+    width: 90%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+    font-size:var(--input-font-size);
+    text-align: left;
+    display: block;
+    transition: 0.5s;
+}
+
+input:invalid {
+    border-bottom: 2px solid rgb(247, 96, 96);
+}
+
+input:valid {
+    border-bottom: 2px solid #80cb9f;
+}
+
+input:focus{
+    border-bottom: 5px solid #80cbc4;
+
+}
+
+input[type="submit"], input[type="reset"]{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color:whitesmoke;
+    text-align: center;
+    font-size:var(--btn-font-size);
+    font-weight: 600;
+    font-family: title;
+    cursor:pointer;
+    background:#80cbc4;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background: #92e6dd;
+}
+
+button, input[type="submit"] {
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+/*Register*/
+#mainReg {
+    flex-direction: column;
+}
+
+#mainReg p {
+    margin:0;
+}
+select{
+    font-family: body;
+    padding: 4px 10px;
+    background-color: #80cbc4 ;
+    border-radius: 5px;
+    border: #80cbc4;
+    cursor: pointer;
+}
+select:hover,
+select:focus{
+    background-color: #6fafa9 ;
+    box-shadow:0 0 8px 0 #6fafa9;
+}
+select option{
+    background-color: #80cbc4;
+}
+.radio{
+    margin-top: 0px;
+    margin-right: 50%;
+    width: 50%;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.checkbox{
+    margin-top: 0px;
+    margin-right: 11%;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+.radioInput,
+.checkboxInput{
+    display: none;
+}
+.radioLabel
+,.checkboxLabel{
+    box-shadow: 0 0 1px rgb(0, 0, 0.25);
+    padding: 8px 14px;
+    font-family: title;
+    font-size: 20px;
+    background-color: #80cbc4;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.radioLabel:not(:last-of-type),
+.checkboxLabel:not(:last-of-type)
+{
+    border-right: 1px solid rgb(0, 0, 0);
+}
+.radioLabel:hover,
+.checkboxLabel:hover{
+    box-shadow:0 0 8px 0 #8adbd3;
+
+
+}
+
+.radioInput:checked + .radioLabel,
+.checkboxInput:checked + .checkboxLabel{
+    background-color: #6be0d5;
+}
+
+textarea {
+    margin-right: 10%;
+    height: 10rem;
+    width: 90%;
+    border: 3px solid #80cbc4;
+    border-radius: 8px;
+    resize: none;
+    font-size:1.5rem;
+  }
+
+
+#mainReg h1 {
+    color: white;
+    width: 100%;
+    height: 100px;
+    padding-top : 25px;
+    margin-bottom: 5%;
+    text-align: center;
+    background-image: url("../New_products/contact.jpg");
+}
+
+
+
+#allFormCont{
+    width: 70%;
+    max-width: 900px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: snow;
+    text-align: left;
+    padding: 5%;
+}
+
+#allFormCont input[type="file"] {
+    border: none;
+}
+
+#typeCont {
+    display: flex;
+}
+
+#typeCont input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#typeCont {
+    width: 100%;
+    margin-bottom:10%;
+}
+
+#typeCont .radioType {
+    width: 172px;
+    height: 230px;
+    padding: 5%;
+    border: 3px solid darkgrey;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#typeCont .radioType:hover{
+    background-color: rgba(121, 182, 97, 0.411);
+}
+
+#typeCont input[type="radio"]:checked + .radioType{
+    background-color: rgba(64, 170, 22, 0.61);
+}
+
+#typeCont .radioType img {
+    width: 100%;
+    height: 70%;
+}
+
+#typeCont .radioType span {
+    width:100%;
+    height: 10%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#allFormCont p {
+    font-size: var(--p-font-size);
+    font-family: body, Times, serif;
+}
+
+#allFormCont select[name="storeCategory"] {
+    margin-bottom: 15%;
+}
+
+#allFormCont #warnMsg {
+    width: 70%;
+    margin-right: 30%;
+    text-align: left;
+}
+
+#submitBtnCont {
+    width: 70%;
+    height: 100%;
+    margin: 20px 0;
+    margin-right: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#submitBtnCont input {
+    width: 40%;
+    height: 30px;
+    padding: auto;    
+}
+
+/*iPad Screen*/
+@media only screen and (max-width:1023px){
+    #mainSignIn {
+        width: 90vw;
+        margin: 10vh 5vw;
+    }
+    .radioLabel, .checkboxLabel  {
+        font-size: 12px;
+    }
+}
+
+/*iPhone 6 Screen*/
+@media only screen and (max-width:767px){
+    #signUpCont button,
+    #rSignInCont button {
+        text-align: center;
+        padding:  auto;
+        font-size: 1rem;
+        z-index: 0;
+    }
+
+    #signUpCont button {
+        margin-top: 30%;
+        margin-bottom: 10%;
+    }
+
+    #signUpCont button a,
+    #rSignInCont button a {
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+    }
+
+    /* Register */
+    #mainReg h1 {
+        font-size: 1.2rem;
+    }
+
+    #mainReg h2, #mainReg optgroup, #mainReg select{
+        font-size: 0.8rem;
+    }
+
+    #mainReg h3, #mainReg p, #mainReg span, #mainReg input {
+        font-size: 0.6rem;
+    }
+
+    #mainReg #submitBtnCont input {
+        margin-right: 0;
+    }
+
+    .radioLabel
+    ,.checkboxLabel{
+        font-size: 0.8rem;
+        padding: 0px;
+
+    }
+    #typeCont .radioType {
+        width: 100px;
+        height: 140px;
+    }
+
+    #typeCont .radioType span {
+        font-weight: 600;
+    }
+    #submitBtnCont input {
+        height: 80%;
+        padding: 3%;
+        font-size: 0.5rem;
+    }
+
+    .radioLabel, .checkboxLabel  {
+        font-size: 9px;
+    }
+}
+
