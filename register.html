@@ -25,7 +25,7 @@
                         <a class="link" href="index.html">Home</a>
                         <a class="link" href="aboutus.html">About us</a>
                         <a class="link" href="fees.html">Fees</a>
-                        <a class="link" href="myaccount.html">My account</a>
+                        <a class="link" id = "account" href="myaccount.html">My account</a>
                         <a class="link" href="browseproducts.html">Browse</a>
                         <a class="link" href="faq.html">FAQs</a>
                         <a class="link" href="contact.html">Contact</a>
@@ -37,7 +37,7 @@
             <!--Sign In Btn-->
             <section id="rSignInCont">
                 <p>Are you already our member?</p>
-                <button type="button"><a href="myaccount.html">Sign In</a></button>
+                <button type="button"><a href="myAccount.html">Sign In</a></button>
             </section>
 
             <!--Register Form-->   
@@ -45,8 +45,8 @@
                 <h1>Register Account</h1>
                 <h2>Personal Information</h2>
                 <p>The following fields are required for all member.</p>
-                <form id="registerForm" method ="post" action="myaccount.html" onsubmit="return register();">
-     <label for="email"><h3>Email:</h3></label>
+                <form id="registerForm" method ="post" action="#allFormCont" onsubmit="return register();">
+                    <label for="email"><h3>Email:</h3></label>
                     <input type="text" id="rEmail" name="rEmail" required>
                     <ul class ="errCont invalidForm validForm" id="emailList"></ul>
                     <label for="phoneNvm"><h3>Phone Number:</h3></label>
@@ -449,6 +449,7 @@
     
         <script type="text/javascript" src="js/formvalidation.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/checkstatus.js"></script>
         <noscript>It seems like your browser does not support JavaScript. Please check again.</noscript>
     </body>
 </html>

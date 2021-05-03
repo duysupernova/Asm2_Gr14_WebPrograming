@@ -94,7 +94,7 @@ input:invalid {
 }
 
 input:valid {
-    border-bottom: 2px solid rgb(53, 97, 36);
+    border-bottom: 2px solid rgb(75, 117, 182);
 }
 
 input:focus{
