@@ -106,7 +106,7 @@ function isAtLeastThreeChr(formValue){
 }
 
 function isValidZipcode(uZipCode){
-    let zipEx = new RegExp("^\d{4,6}$");
+    let zipEx = new RegExp("^([0-9]{4}|[0-9]{6})$");
     return (zipEx.test(uZipCode));
 }
 
@@ -126,24 +126,25 @@ function formSuccess(successForm){
     // add new child li "sucess"
     const validList = document.getElementById(successForm);
     let successMsg = document.createElement('li');
+    console.log(validList);
     validList.innerHTML = " ";
     successMsg.innerHTML = "Success";
     validList.appendChild(successMsg);
-    validList.classList.remove = "invalidForm";
-    validList.classList.add = "validForm";
+    validList.classList.remove("invalidForm");
+    validList.classList.add("validForm");
 }
 
 function displayError(listName, errArray){
-    // listname = ol id 
-    // errArray should be list
-    // append list to ol
     for (let y = 0; y < errArray.length; y++){
         let invalidList = document.getElementById(listName);
         let li = document.createElement('li');
+        console.log(invalidList);
+        console.log(invalidList.classList);
         invalidList.innerHTML = " ";
         li.innerHTML = errArray[y];
         invalidList.appendChild(li);
-        invalidList.classList.add = "invalidForm";
-        invalidList.classList.remove = "validForm";
+        console.log(invalidList.classList);
+        invalidList.classList.add("invalidForm");
+        invalidList.classList.remove("validForm");
     }
 }

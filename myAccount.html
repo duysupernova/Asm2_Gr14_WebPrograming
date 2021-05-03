@@ -41,10 +41,10 @@
                     <form id="signInForm" method ="post" action="mypage.html" onsubmit="return loginValidation();">
                         <label for="signInId"><span>Email or Phone number:</span></label>
                         <input type="text" id="uId" name="uId" placeholder="example@rmit.edu.vn OR 123456789" required/>
-                        <ul class="errCont invalidForm validForm" id="olEmail"></ul>
+                        <ul class="errCont" id="olEmail"></ul>
                         <label for="signInPsw"><span>Password:</span></label>
                         <input type="password" id="uPsw" name="uPsw" placeholder="Enter your password." autocomplete="off" required/>
-                        <ul class="errCont invalidForm validForm" id="olPw"></ul>
+                        <ul class="errCont" id="olPw"></ul>
                         <input type="submit" value="Sign In"/>
                     </form>
                     <p><a href="forgotpassword.html">Forgot Password ?</a></p>
@@ -73,6 +73,7 @@
         </footer>
         <script type="text/javascript" src="js/formvalidation.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/checkstatus.js"></script>
         <noscript>It seems like your browser does not support JavaScript. Please check again.</noscript>
     </body>
 </html>

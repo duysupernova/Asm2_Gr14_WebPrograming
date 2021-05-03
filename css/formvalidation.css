@@ -1,8 +1,20 @@
 /* JS */
+.errCont{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 .validForm{
-    background-color: green;
-};
+    background-color: rgb(134, 204, 134);
+}
 
-.invalidForm{
-    background-color: red;
+.invalidForm {
+    background-color: rgb(228, 120, 120);
+}
+
+@media only screen and (max-width: 767px){
+    .errCont{
+    font-size: 0.6rem;
+    }
 }
