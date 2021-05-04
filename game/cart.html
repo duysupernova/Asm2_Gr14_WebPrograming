@@ -42,7 +42,7 @@
                     <th>Quanity</th>
                     <th>Subtotal</th>
                 </tr>
-                <tr>
+                <tr class="product-info">
                     <td>
                         <div class="info">
                             <img src="img/product/7.png">
@@ -50,22 +50,22 @@
                                 <h1>
                                     The Speed
                                 </h1>
-                                <p>
-                                    price: 70$
+                                <p class = "price">
+                                    $70
                                 </p>
                             </div>
 
 
                         </div>
                     </td>
-                    <td><input type="number" value="1" style="
+                    <td><input class = "quantity"  value = "1" type="number" style="
                         border-radius: 10px;
                         text-align: center;
                         width: 30%;">
                     </td>
                     <td>$70</td>
                 </tr>
-                <tr>
+                <tr class="product-info">
                     <td>
                         <div class="info">
                             <img src="img/product/5.png">
@@ -73,39 +73,42 @@
                                 <h1>
                                     The Strong
                                 </h1>
-                                <p>
-                                    price: 60$
+                                <p class = "price">
+                                    $60
                                 </p>
                             </div>
 
 
                         </div>
                     </td>
-                    <td><input type="number" value="1" style="
+                    <td><input type="number" value = "1" class = "quantity"  style="
                         border-radius: 10px;
                         text-align: center;
                         width: 30%;">
+
+
                     </td>
+                    
                     <td>$60</td>
                 </tr>
             </table>
             <div class="total-price">
                 <table>
                     <tr>
-                        <td>Subtotal</td>
-                        <td>$130</td>
+                        <td >Subtotal</td>
+                        <td class = "sub-total">$130</td>
                     </tr>
                     <tr>
-                        <td>Tax</td>
-                        <td>$13</td>
+                        <td >Tax</td>
+                        <td class = "tax">$13</td>
                     </tr>
                     <tr>
                         <td>Delivery</td>
-                        <td>$5</td>
+                        <td class = "delivery">$5</td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">TOTAL</td>
-                        <td style="font-weight: bold;">$148</td>
+                        <td style="font-weight: bold;" class = "total">$148</td>
                     </tr>
                 </table>
 
@@ -134,4 +137,6 @@
     </footer>
 
 </body>
+<script src ="./js/cart.js" ></script>
+
 </html>
