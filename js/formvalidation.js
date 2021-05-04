@@ -19,7 +19,13 @@ function validateEmail(email) {
 
 function validatePhoneNumber(phoneNvm){
     let PhoneErrList = [];
-    if (!(isValidPhone(phoneNvm))) {
+    if (!(isValidPhone1(phoneNvm))) {
+        PhoneErrList.push("Invalid phone number. Please check again.");
+    }
+    if (!(isValidPhone2(phoneNvm))) {
+        PhoneErrList.push("Invalid phone number. Please check again.");
+    }
+    if (!(isValidPhone3(phoneNvm))) {
         PhoneErrList.push("Invalid phone number. Please check again.");
     }
     return PhoneErrList;
@@ -96,8 +102,16 @@ function isValidName(name){
     return /^[a-zA-Z]+$/.test(name);
 }
 
-function isValidPhone(phone){
-    return /^([0-9].)*[0-9]$/.test(phone);
+function isValidPhone1(phone){
+    return /^([0-9]{10})$/.test(phone);
+}
+
+function isValidPhone2(phone){
+    return /^(([0-9]+\W){9})[0-9]$/.test(phone);
+}
+
+function isValidPhone3(phone){
+    return /^([0-9]+\W)([0-9]+\W)([0-9]{4})$/.test(phone);
 }
 
 function isAtLeastThreeChr(formValue){
