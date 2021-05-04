@@ -115,7 +115,7 @@ function isValidZipcode(uZipCode) {
 }
 
 function isRegisterPsw(strPsw) {
-    let registerPsw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20}$");
+    let registerPsw = new RegExp("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20})$");
     return (registerPsw.test(strPsw));
 }
 
@@ -129,26 +129,6 @@ function displayValidation(errMsgArr) {
         }
     }
 }
-
-const textarea = document.getElementById('mess');
-const remainingCharsText = document.getElementById('my-textarea-remaining-char');
-const Max_Chars = 500;
-const Min_Chars = 50;
-
-textarea.addEventListener('input',() => {
-    const remaining500 = Max_Chars - textarea.value.length;
-    const remaining50 = Min_Chars - textarea.value.length;
-    let x = textarea.value.length;
-    if (x < 50) {
-        remainingCharsText.textContent = `You have ${50 - x} are needed.`; 
-    }
-    else if (50 < x && x < 500) {
-        remainingCharsText.textContent = `You have ${500 - x} characters left.`; 
-    }
-    else if (x > 500) {
-        remainingCharsText.textContent = `You have to delete ${x - 500} characters.`; 
-    }
-});
 
 function formSuccess(successForm) {
     // remove all append child <ol class>
