@@ -95,7 +95,7 @@ function isValidZipcode(uZipCode) {
 }
 
 function isRegisterPsw(strPsw) {
-    let registerPsw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20}$");
+    let registerPsw = new RegExp("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20})$");
     return (registerPsw.test(strPsw));
 }
 
@@ -110,6 +110,11 @@ function displayValidation(errMsgArr) {
     }
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 function formSuccess(successForm) {
     // remove all append child <ol class>
     // add new child li "sucess"
