@@ -83,20 +83,24 @@ function isValidEmail(uemail) {
 }
 
 function isValidName(name) {
-    return /^[a-zA-Z]+$/.test(name);
+    let validName = new RegExp("^[a-zA-Z]+$");
+    return (validName.test(name));
 }
 
 
 function isValidPhone1(phone){
-    return /^([0-9]{10})$/.test(phone);
+    let validphone1 = new RegExp("^([0-9]{10})$");
+    return (validphone1.test(phone));
 }
 
 function isValidPhone2(phone){
-    return /^(([0-9]+\W){9})[0-9]$/.test(phone);
+    let validphone2 = new RegExp("^(([0-9]+\W){9})[0-9]$");
+    return (validphone2.test(phone));
 }
 
 function isValidPhone3(phone){
-    return /^([0-9]+\W)([0-9]+\W)([0-9]{4})$/.test(phone);
+    let validphone3 = new RegExp("^([0-9]+\W)([0-9]+\W)([0-9]{4})$");
+    return (validphone3.test(phone));
 }
 
 function isAtLeastThreeChr(formValue) {
