@@ -1,8 +1,9 @@
 'use strict';
-function checkAllValidation(errMsgCont){
-    for (let errContName in errMsgCont){
+
+function checkAllValidation(errMsgCont) {
+    for (let errContName in errMsgCont) {
         let firstChildText = document.getElementById(errContName).firstElementChild.innerHTML;
-        if(firstChildText !== "Success"){
+        if (firstChildText !== "Success") {
             return false;
         }
     }
@@ -17,7 +18,7 @@ function validateEmail(email) {
     return EmailErrList;
 }
 
-function validatePhoneNumber(phoneNvm){
+function validatePhoneNumber(phoneNvm) {
     let PhoneErrList = [];
     if (!(isValidPhone1(phoneNvm))) {
         PhoneErrList.push("Invalid phone number. Please check again.");
@@ -38,40 +39,23 @@ function validatePassword(psw) {
     }
     return pwErrList;
 }
-function validateRegisterPassword(upassword){
-    let errorMsg = []
-    const atLeastUpper = new RegExp("[A-Z]+");
-    const atLeastLower = new RegExp("[a-z]+");
-    const atLeastDigit = new RegExp("[0-9]+");
-    const atLeastSpecial = new RegExp("[\!\@\#\$\%\^\&\*]+");
-    const pwEx = new RegExp("^[^\s]{8,20}$");
 
-    if(!(pwEx.test(upassword))){
-        errorMsg.push("The password form cannot begin with white space and the range of the form is 8 to 20 characters.");
-    }
-    if(!(atLeastUpper.test(upassword))){
-        errorMsg.push("The password form requires at least one upper case letter.");
-    }
-    if(!(atLeastLower.test(upassword))){
-        errorMsg.push("The password form requires at least one lower case letter.");
-    }
-    if(!(atLeastDigit.test(upassword))){
-        errorMsg.push("The password form requires at least one digit.");
-    }
-    if(!(atLeastSpecial.test(upassword))){
-        errorMsg.push("The password form requires at least one special character. (ex)!@#$%^&* ");
+function validateRegisterPassword(upassword) {
+    let errorMsg = []
+    if (!(isRegisterPsw(upassword))) {
+        errorMsg.push("Invalid password. Please check again.");
     }
     return errorMsg;
 }
 
-function validateRetypePassword(userPsw, userRePsw){
-    if(userPsw === userRePsw){
+function validateRetypePassword(userPsw, userRePsw) {
+    if (userPsw === userRePsw) {
         return true;
     }
     return false;
 }
 
-function validateName(userName){
+function validateName(userName) {
     if (isValidName(userName)) {
         return true;
     }
@@ -79,14 +63,14 @@ function validateName(userName){
 }
 
 
-function validateAtLeastThreeChr(testString){
+function validateAtLeastThreeChr(testString) {
     if (isAtLeastThreeChr(testString)) {
         return true;
     }
     return false;
 }
 
-function validateZipCode(userZipCode){
+function validateZipCode(userZipCode) {
     if (isValidZipcode(userZipCode)) {
         return true;
     }
@@ -94,13 +78,14 @@ function validateZipCode(userZipCode){
 }
 
 // Regular expression
-function isValidEmail(uemail){
+function isValidEmail(uemail) {
     return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(uemail));
 }
 
-function isValidName(name){
+function isValidName(name) {
     return /^[a-zA-Z]+$/.test(name);
 }
+
 
 function isValidPhone1(phone){
     return /^([0-9]{10})$/.test(phone);
@@ -114,20 +99,25 @@ function isValidPhone3(phone){
     return /^([0-9]+\W)([0-9]+\W)([0-9]{4})$/.test(phone);
 }
 
-function isAtLeastThreeChr(formValue){
+function isAtLeastThreeChr(formValue) {
     let atLeastThreeRegex = new RegExp("^[a-zA-Z]{3,}$");
     return (atLeastThreeRegex.test(formValue));
 }
 
-function isValidZipcode(uZipCode){
+function isValidZipcode(uZipCode) {
     let zipEx = new RegExp("^([0-9]{4}|[0-9]{6})$");
     return (zipEx.test(uZipCode));
 }
 
+function isRegisterPsw(strPsw) {
+    let registerPsw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20}$");
+    return (registerPsw.test(strPsw));
+}
+
 // Display form status
-function displayValidation(errMsgArr){
-    for (let errListName in errMsgArr){
-        if (errMsgArr[errListName].length > 0){
+function displayValidation(errMsgArr) {
+    for (let errListName in errMsgArr) {
+        if (errMsgArr[errListName].length > 0) {
             displayError(errListName, errMsgArr[errListName]);
         } else {
             formSuccess(errListName);
@@ -135,12 +125,11 @@ function displayValidation(errMsgArr){
     }
 }
 
-function formSuccess(successForm){
+function formSuccess(successForm) {
     // remove all append child <ol class>
     // add new child li "sucess"
     const validList = document.getElementById(successForm);
     let successMsg = document.createElement('li');
-    console.log(validList);
     validList.innerHTML = " ";
     successMsg.innerHTML = "Success";
     validList.appendChild(successMsg);
@@ -148,8 +137,8 @@ function formSuccess(successForm){
     validList.classList.add("validForm");
 }
 
-function displayError(listName, errArray){
-    for (let y = 0; y < errArray.length; y++){
+function displayError(listName, errArray) {
+    for (let y = 0; y < errArray.length; y++) {
         let invalidList = document.getElementById(listName);
         let li = document.createElement('li');
         console.log(invalidList);
