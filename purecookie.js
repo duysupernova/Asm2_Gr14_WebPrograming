@@ -1,4 +1,5 @@
 const cookiesDataStorage = {
+
   getItem: (key) => {
     const cookies = document.cookie
       .split(';')
@@ -23,6 +24,7 @@ window.onload = () =>{
     const consent = confirm('Agree to the terms and condition of the site ?');
     if (consent) {
       saveToStorage();
+
     }
   }
 };
