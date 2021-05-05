@@ -1,17 +1,11 @@
 'use strict';
 
-
 // Get Element.
-
 const body = document.querySelector('body');
 const myPagePath = "mypage.html";
 var accountLink = document.querySelector('#account').href;
 
-//  //Window.location.assign("//127.0.0.1:5500/accountContents/mypage.html");
-
-
 // function
-// Login function
 function loginValidation() {
     let errMsg = {
         olEmail: [],
@@ -34,11 +28,8 @@ function loginValidation() {
 
     if (checkAllValidation(errMsg)) {
         localStorage.userCurrentId = userID;
+        console.log(checkAllValidation(errMsg));
         return true;
     }
     return false;
 }
-
-
-
-// Load my page function
