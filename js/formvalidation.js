@@ -134,22 +134,24 @@ function formSuccess(successForm) {
     // remove all append child <ol class>
     // add new child li "sucess"
     const validList = document.getElementById(successForm);
+    const successUnicode = "&#10004;" + "   ";
     let successMsg = document.createElement('li');
     validList.innerHTML = " ";
-    successMsg.innerHTML = "Success";
+    successMsg.innerHTML = successUnicode + "Success";
     validList.appendChild(successMsg);
     validList.classList.remove("invalidForm");
     validList.classList.add("validForm");
 }
 
 function displayError(listName, errArray) {
+    const errorUnicode = "&#10008;" + "   ";
     for (let y = 0; y < errArray.length; y++) {
         let invalidList = document.getElementById(listName);
         let li = document.createElement('li');
         console.log(invalidList);
         console.log(invalidList.classList);
         invalidList.innerHTML = " ";
-        li.innerHTML = errArray[y];
+        li.innerHTML = errorUnicode + errArray[y];
         invalidList.appendChild(li);
         console.log(invalidList.classList);
         invalidList.classList.add("invalidForm");
