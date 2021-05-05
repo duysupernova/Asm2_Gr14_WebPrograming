@@ -1,13 +1,14 @@
 'use strict';
 
 function checkAllValidation(errMsgCont) {
+    const successMsg = "&#10004;" + "   " + "Success";
     for (let errContName in errMsgCont) {
         let firstChildText = document.getElementById(errContName).firstElementChild.innerHTML;
-        if (firstChildText !== "Success") {
-            return false;
+        if (firstChildText !== successMsg) {
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 function validateEmail(email) {
