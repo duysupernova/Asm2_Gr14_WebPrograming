@@ -20,7 +20,13 @@ function validateEmail(email) {
 
 function validatePhoneNumber(phoneNvm) {
     let PhoneErrList = [];
-    if (!(isValidPhone(phoneNvm))) {
+    if (!(isValidPhone1(phoneNvm))) {
+        PhoneErrList.push("Invalid phone number. Please check again.");
+    }
+    if (!(isValidPhone2(phoneNvm))) {
+        PhoneErrList.push("Invalid phone number. Please check again.");
+    }
+    if (!(isValidPhone3(phoneNvm))) {
         PhoneErrList.push("Invalid phone number. Please check again.");
     }
     return PhoneErrList;
@@ -50,10 +56,11 @@ function validateRetypePassword(userPsw, userRePsw) {
 }
 
 function validateName(userName) {
-    if (isValidName(userName)) {
-        return true;
+    let errorMsg = []
+    if (!(isValidName(userName))) {
+        errorMsg.push("Invalid name. Please check again.");
     }
-    return false;
+    return errorMsg;
 }
 
 
@@ -77,11 +84,24 @@ function isValidEmail(uemail) {
 }
 
 function isValidName(name) {
-    return /^[a-zA-Z]+$/.test(name);
+    let validName = new RegExp("^[a-zA-Z]{3,}$");
+    return (validName.test(name));
 }
 
-function isValidPhone(phone) {
-    return /^([0-9].)*[0-9]$/.test(phone);
+
+function isValidPhone1(phone){
+    let validphone1 = new RegExp("^([0-9]{10})$");
+    return (validphone1.test(phone));
+}
+
+function isValidPhone2(phone){
+    let validphone2 = new RegExp("^(([0-9]+\W){9})[0-9]$");
+    return (validphone2.test(phone));
+}
+
+function isValidPhone3(phone){
+    let validphone3 = new RegExp("^([0-9]+\W)([0-9]+\W)([0-9]{4})$");
+    return (validphone3.test(phone));
 }
 
 function isAtLeastThreeChr(formValue) {

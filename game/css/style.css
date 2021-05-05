@@ -318,3 +318,8 @@ td{
         margin-bottom: 50%;
     }
 }
+
+
+.price{
+    display: inline-block;
+}
