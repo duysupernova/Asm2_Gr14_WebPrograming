@@ -46,7 +46,7 @@ textarea.addEventListener('input',() => {
     const remaining50 = Min_Chars - textarea.value.length;
     let x = textarea.value.length;
     if (x < 50) {
-        remainingCharsText.textContent = `You have ${50 - x} are needed.`; 
+        remainingCharsText.textContent = `You have ${50 - x} characters are needed.`; 
     }
     else if (50 < x && x < 500) {
         remainingCharsText.textContent = `You have ${500 - x} characters left.`; 
