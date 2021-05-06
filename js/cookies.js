@@ -1,30 +1,16 @@
-const cookiesDataStorage = {
+const cookieBox = document.querySelector(".popup_cookies"),
+acceptBtn = cookieBox.querySelector(".buttons button");
 
-  getItem: (key) => {
-    const cookies = document.cookie
-      .split(';')
-      .map(cookie => cookie.split('='))
-      .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
-      return cookies[key];
-  },
-  setItem: (key, value) => {
-    document.cookie = `$(key)=$(value)`;
-  },
-};
-
-const storageCookies = cookiesDataStorage;
-const consentProperty = 'cookies';
-
-const showPopup = () => !storageCookies.getItem(consentProperty);
-const saveToStorage = () => storageCookies.setItem(consentProperty, true);
-
-window.onload = () =>{
-
-  if (showPopup()) {
-    const consent = confirm('Agree to the terms and condition of the site ?');
-    if (consent) {
-      saveToStorage();
-
-    }
-  }
-};
+//Expire the cookies after 1 month
+acceptBtn.onclick = ()=>{
+document.cookie = "YourCookies; max-age="+60*60*24*30;
+if(document.cookie){
+    cookieBox.classList.add("hide"); 
+    //if you already accpet, then hide cookie//
+}
+else{
+    alert("Cookie error!");
+}
+}
+let checkCookie = document.cookie.indexOf("YourCookies");
+checkCookie != -1 ? cookieBox.classList.add("hide"): cookieBox.classList.remove("hide");
