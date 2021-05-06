@@ -1,14 +1,14 @@
 'use strict';
 
 function checkAllValidation(errMsgCont) {
-    const successMsg = "&#10004;" + "   " + "Success";
+    const successMsg = "Success";
     for (let errContName in errMsgCont) {
         let firstChildText = document.getElementById(errContName).firstElementChild.innerHTML;
         if (firstChildText !== successMsg) {
-            return true;
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 function validateEmail(email) {
@@ -132,29 +132,22 @@ function displayValidation(errMsgArr) {
 }
 
 function formSuccess(successForm) {
-    // remove all append child <ol class>
-    // add new child li "sucess"
     const validList = document.getElementById(successForm);
-    const successUnicode = "&#10004;" + "   ";
     let successMsg = document.createElement('li');
     validList.innerHTML = " ";
-    successMsg.innerHTML = successUnicode + "Success";
+    successMsg.innerHTML = "Success";
     validList.appendChild(successMsg);
     validList.classList.remove("invalidForm");
     validList.classList.add("validForm");
 }
 
 function displayError(listName, errArray) {
-    const errorUnicode = "&#10008;" + "   ";
     for (let y = 0; y < errArray.length; y++) {
         let invalidList = document.getElementById(listName);
         let li = document.createElement('li');
-        console.log(invalidList);
-        console.log(invalidList.classList);
         invalidList.innerHTML = " ";
-        li.innerHTML = errorUnicode + errArray[y];
+        li.innerHTML = errArray[y];
         invalidList.appendChild(li);
-        console.log(invalidList.classList);
         invalidList.classList.add("invalidForm");
         invalidList.classList.remove("validForm");
     }
