@@ -68,7 +68,9 @@ ul {
 ul li {
   margin-bottom: 1%;
 }
-
+#cart-icon{
+  color: white;
+}
 .footerContent a:link, .footerContent a:visited {
   text-decoration-line: underline;
   -moz-text-decoration-line: underline;
