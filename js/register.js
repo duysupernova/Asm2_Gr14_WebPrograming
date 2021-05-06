@@ -1,6 +1,4 @@
 'use strict';
-// Form Validation
-
 // Function
 function register() {
     let errMsg = {

@@ -1,18 +1,13 @@
 'use strict';
 
-// Get Element.
-const body = document.querySelector('body');
-const myPagePath = "mypage.html";
-var accountLink = document.querySelector('#account').href;
-
 // function
 function loginValidation() {
     let errMsg = {
         olEmail: [],
         olPw: []
     }
-    const userID = document.querySelector('#uId').value;
-    const userPW = document.querySelector('#uPsw').value;
+    let userID = document.querySelector('#uId').value;
+    let userPW = document.querySelector('#uPsw').value;
     let resultEmail = validateEmail(userID);
     let resultPw = validatePassword(userPW);
 
@@ -24,11 +19,11 @@ function loginValidation() {
         errMsg.olPw.push(resultPw[0]);
     }
 
-    displayValidation(errMsg)
-
-    if (checkAllValidation(errMsg)) {
+    displayValidation(errMsg);
+    console.log(checkAllValidation(errMsg));
+    if (checkAllValidation(errMsg)){
+        console.log("sdf");
         localStorage.userCurrentId = userID;
-        console.log(checkAllValidation(errMsg));
         return true;
     }
     return false;
