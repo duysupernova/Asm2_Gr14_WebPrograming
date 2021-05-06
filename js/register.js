@@ -82,6 +82,7 @@ const ownerInfo = document.querySelector('.ownerInfo');
 // Add event 
 ownerBtn.addEventListener('click',showBox);
 shopperBtn.addEventListener('click',hideBox);
+
 // Function
 function showBox(){
     ownerInfo.classList.add('visible');
