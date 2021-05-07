@@ -1,15 +1,39 @@
 var button = document.getElementById("add-button")
 var buyButton = document.getElementById("buy-button")
-
-button.addEventListener('click',() => {    
-    cartNumber()
+cartNumber()
+if(button){
+	button.addEventListener('click',() => {    
+    cartUpdate()
     popUp()
-});
-buyButton.addEventListener('click',() => {    
-    cartNumber()
-});
+});}
 
-function cartNumber() {
+if(buyButton){
+	buyButton.addEventListener('click',() => {    
+    cartUpdate()
+});
+}
+
+function cartNumber(){
+	var num = 0
+	for (var i in localStorage) {
+        if (localStorage.getItem(i) != null){
+			string = localStorage.getItem(i)
+            num += parseInt(string.split(",")[1])
+		}
+	}
+	console.log(document.getElementsByClassName('cart-number')[0].innerText)
+	document.getElementsByClassName('cart-number')[0].innerHTML = `${num}<img src = "img/cart.png" class = "cart-icon">`
+	var icon = document.getElementsByClassName("cart-icon")[0]
+	if(num < 10){
+		icon.style.right = "29px";
+	}
+	if(num >= 10) {
+		icon.style.right = "35px";
+	}
+
+	
+}
+function cartUpdate() {
     var n = false;
     if(localStorage.getItem(document.getElementById("product-name").innerText) != null){
         var string = localStorage.getItem(document.getElementById("product-name").innerText)
@@ -21,7 +45,8 @@ function cartNumber() {
     else{
         localStorage.setItem(document.getElementById("product-name").innerText, [parseInt(document.getElementById("product-price").innerText.replace("$","")),1])
     }
-    console.log(typeof document.getElementById("product-name").innerText)
+	cartNumber()
+
 }
 
 function popUp() {

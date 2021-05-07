@@ -14,7 +14,16 @@
 
 }
 .bar-content img{
-    width: 70px;
+    width: 80px;
+}
+.bar-content .cart-icon{
+	width : 44px;
+	position:relative;
+	right: 35px;
+	top: 3.5px;
+}
+.cart-number{
+	margin-padding:10px;
 }
 
 .center {
@@ -65,6 +74,7 @@ header {
 #inpNavToggle {
     display: none;
 }
+
 
 #inpNavToggle:checked~.nav {
     display: flex;
