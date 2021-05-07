@@ -1,5 +1,7 @@
 'use strict';
 
+let phone = document.getElementById("txtPhone")
+
 function checkAllValidation(errMsgCont) {
     const successMsg = "Success";
     for (let errContName in errMsgCont) {
@@ -21,15 +23,16 @@ function validateEmail(email) {
 
 function validatePhoneNumber(phoneNvm) {
     let PhoneErrList = [];
-    if (!(isValidPhone1(phoneNvm))) {
-        PhoneErrList.push("Invalid phone number. Please check again.");
-    }
-    if (!(isValidPhone2(phoneNvm))) {
-        PhoneErrList.push("Invalid phone number. Please check again.");
-    }
-    if (!(isValidPhone3(phoneNvm))) {
-        PhoneErrList.push("Invalid phone number. Please check again.");
-    }
+    console.log((isValidPhone1(phoneNvm)));
+    console.log((isValidPhone2(phoneNvm)));
+    console.log((isValidPhone3(phoneNvm)));
+    if ((isValidPhone1(phoneNvm))|
+        (isValidPhone2(phoneNvm))|
+        (isValidPhone3(phoneNvm))){
+            return PhoneErrList;
+        }
+
+    PhoneErrList.push("Invalid phone number. Please check again3.");
     return PhoneErrList;
 }
 
@@ -91,17 +94,17 @@ function isValidName(name) {
 
 
 function isValidPhone1(phone){
-    let validphone1 = new RegExp("^([0-9]{10})$");
+    let validphone1 = new RegExp("^([0-9]{9,11})$");
     return (validphone1.test(phone));
 }
 
 function isValidPhone2(phone){
-    let validphone2 = new RegExp("^(([0-9]+\W){9})[0-9]$");
+    let validphone2 = new RegExp("^([0-9]+\W){9}[0-9]$");
     return (validphone2.test(phone));
 }
 
 function isValidPhone3(phone){
-    let validphone3 = new RegExp("^([0-9]+\W)([0-9]+\W)([0-9]{4})$");
+    let validphone3 = new RegExp("^([0-9]+\W){2}([0-9]{4})");
     return (validphone3.test(phone));
 }
 
