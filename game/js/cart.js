@@ -1,5 +1,8 @@
 var quantityInputs = document.getElementsByClassName('quantity')
 var productInfo = document.getElementsByClassName('product-info')
+var order = document.getElementsByClassName('order')[0]
+var coupon = document.getElementsByClassName('coupon')[0]
+
 
 updateCart()
 updateTotal()
@@ -8,7 +11,33 @@ for (var i = 0; i < quantityInputs.length; i++) {
     quantityInputs[i].addEventListener('change', quantityUpdate)
     
 }
+order.addEventListener('click',clearCart)
+coupon.addEventListener('change',updateTotal)
 
+
+function couponCheck(){
+	if (coupon.value  == "COSC2430-HD"){
+		coupon.style.backgroundColor = "#99FFC6"
+		coupon.style.borderWidth = 0
+		return 1
+	}
+	if (coupon.value  == "COSC2430-DI"){
+		coupon.style.backgroundColor = "#99FFC6"
+		coupon.style.borderWidth = 0
+		return 2
+	}
+	else{
+		coupon.style.backgroundColor = "white"
+		coupon.style.borderWidth = "2px"
+		return 0
+	}
+}
+function clearCart(){
+	for (var i in localStorage)
+		if (localStorage.getItem(i) != null){
+			localStorage.removeItem(i)
+		}
+}
 function emtpyCart(){
     var cart = document.querySelector(".cart")
     if(localStorage.length <= 0){
@@ -117,7 +146,14 @@ function updateTotal() {
     document.getElementsByClassName('sub-total')[0].textContent = '$' + subTotal
     document.getElementsByClassName('tax')[0].textContent = '$' + tax
     document.getElementsByClassName('delivery')[0].textContent = '$' + delivery
-    document.getElementsByClassName('total')[0].textContent = '$' + total
+	if(couponCheck() == 1){
+		total = total-(total/20)
+	}
+	if(couponCheck() == 2){
+		total = total-(total/10)
+	}
+	document.getElementsByClassName('total')[0].textContent = '$' + total
+
     
 }
 
