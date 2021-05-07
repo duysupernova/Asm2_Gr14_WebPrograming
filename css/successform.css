@@ -1,0 +1,39 @@
+.msgCont{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25%;
+    margin-top: 15%;
+    width:50%;
+    height:100%;
+    padding:5%;
+    background-color:whitesmoke;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+
+.msgCont h1{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.msgCont p {
+    margin-top: 5%;
+}
+
+.msgCont button {
+    margin-top: 5%;
+    height: 30px;
+    width: 200px;
+    color: whitesmoke;
+}
+
+@media only screen and (max-width:767px){
+    .msgCont h1{
+        font-size: 1.5rem;
+    }
+}
