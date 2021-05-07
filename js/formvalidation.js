@@ -78,27 +78,23 @@ function validateZipCode(userZipCode) {
 
 // Regular expression
 function isValidEmail(uemail) {
-<<<<<<< Updated upstream
-    return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/.test(uemail));
-=======
 	let reg = /^([A-Za-z0-9_\-\.]{3})+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 	let lastReg =  /^([A-Za-z]{2,5})/
-	let domain = uemail.value.split("@")[1]
+	let domain = uemail.split("@")[1]
 	let lastDomain = domain[domain.length-1]
-    if (reg.test(emailField.value) == false) 
+    if (reg.test(uemail) == false) 
         {
-            alert('Invalid Email Address');
             return false;
         }
-	if(uemail.value[(uemail.value.length-1)] == "."){
+	if(uemail[(uemail.length-1)] == "."){
 			return false;
 		}
-	if(uemail.value[0] == "."){
+	if(uemail[0] == "."){
 			return false;
 		}
-	for (var i = 0; i < uemail.value.length ; i++){
+	for (var i = 0; i < uemail.length ; i++){
 			if( i >0 ){
-				if(uemail.value[i] == "." && uemail.value[i] == "."){
+				if(uemail[i] == "." && uemail[i] == "."){
 					return false;
 				}
 			}
@@ -109,7 +105,6 @@ function isValidEmail(uemail) {
 
         return true;
 
->>>>>>> Stashed changes
 }
 
 function isValidName(name) {
