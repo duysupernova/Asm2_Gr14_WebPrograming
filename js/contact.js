@@ -1,9 +1,8 @@
 'use strict';
-function contactValidation (event){
-    //event.preventDefault();
-    let email=document.getElementById("txtEmail");
-    let name=document.getElementById("txtUserName");
-    let phone=document.getElementById("txtPhone");
+function contactValidation (){
+    let email=document.getElementById("txtEmail").value;
+    let name=document.getElementById("txtUserName").value;
+    let phone=document.getElementById("txtPhone").value;
     let errMsg = {
         ulEmail: [],
         ulName: [],
