@@ -78,7 +78,7 @@ function validateZipCode(userZipCode) {
 
 // Regular expression
 function isValidEmail(uemail) {
-    return (/^((([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))){3,}@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/.test(uemail));
+    return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/.test(uemail));
 }
 
 function isValidName(name) {
@@ -105,7 +105,7 @@ function isAtLeastThreeChr(formValue) {
 }
 
 function isValidZipcode(uZipCode) {
-    let zipEx = new RegExp("^([0-9]{4}|[0-9]{6})$");
+    let zipEx = new RegExp("^([0-9]{4,6})$");
     return (zipEx.test(uZipCode));
 }
 
