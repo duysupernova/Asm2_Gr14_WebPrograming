@@ -11,8 +11,6 @@ function checkAllValidation(errMsgCont) {
     return true;
 }
 
-<<<<<<< Updated upstream
-=======
 function validateContactDay(boxes){
     let dayErrList = [];
     for(let a = 0; a < boxes.length; a++){
@@ -25,7 +23,6 @@ function validateContactDay(boxes){
     return dayErrList;
 }
 
->>>>>>> Stashed changes
 function validateEmail(email) {
     let EmailErrList = [];
     if (!(isValidEmail(email))) {

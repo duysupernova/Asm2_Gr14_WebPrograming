@@ -2,7 +2,9 @@ var quantityInputs = document.getElementsByClassName('quantity')
 var productInfo = document.getElementsByClassName('product-info')
 var order = document.getElementsByClassName('order')[0]
 var coupon = document.getElementsByClassName('coupon')[0]
-
+var products = ["The Speed", "The Strong"]
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
 updateCart()
 updateTotal()
@@ -12,9 +14,24 @@ for (var i = 0; i < quantityInputs.length; i++) {
     
 }
 order.addEventListener('click',clearCart)
-coupon.addEventListener('change',updateTotal)
+coupon.addEventListener('change',() => {    
+     updateTotal();
+     couponError();    
+});
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
-
+function couponError(){
+	if(couponCheck()==0){
+		modal.style.display = "block";
+	}
+}
 function couponCheck(){
 	if (coupon.value  == "COSC2430-HD"){
 		coupon.style.backgroundColor = "#99FFC6"
@@ -34,13 +51,18 @@ function couponCheck(){
 }
 function clearCart(){
 	for (var i in localStorage)
-		if (localStorage.getItem(i) != null){
+		if (localStorage.getItem(i) != null && products.includes(i)){
 			localStorage.removeItem(i)
 		}
 }
 function emtpyCart(){
+	var empty = true;
     var cart = document.querySelector(".cart")
-    if(localStorage.length <= 0){
+	for (var i in localStorage)
+		if (localStorage.getItem(i) != null && products.includes(i)){
+			empty = false;
+		}
+    if(empty){
         cart.innerHTML += `<tr class="product-info">
     <td>
         <h1>
@@ -64,7 +86,7 @@ function emtpyCart(){
 function updateCart() {
     var cart = document.querySelector(".cart")
     for (var i in localStorage) {
-        if (localStorage.getItem(i) != null) {
+        if (localStorage.getItem(i) != null && products.includes(i)) {
             string = localStorage.getItem(i)
             price = string.split(",")[0]
             quan = string.split(",")[1]
@@ -147,10 +169,10 @@ function updateTotal() {
     document.getElementsByClassName('tax')[0].textContent = '$' + tax
     document.getElementsByClassName('delivery')[0].textContent = '$' + delivery
 	if(couponCheck() == 1){
-		total = total-(total/20)
+		total = total-(total/100*20)
 	}
 	if(couponCheck() == 2){
-		total = total-(total/10)
+		total = total-(total/100*10)
 	}
 	document.getElementsByClassName('total')[0].textContent = '$' + total
 
