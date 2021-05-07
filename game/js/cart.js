@@ -12,9 +12,17 @@ for (var i = 0; i < quantityInputs.length; i++) {
     
 }
 order.addEventListener('click',clearCart)
-coupon.addEventListener('change',updateTotal)
+coupon.addEventListener('change',() => {    
+     updateTotal();
+     couponError();    
+});
 
 
+function couponError(){
+	if(couponCheck()==0){
+		alert("INVALID COUPON CODE!")
+	}
+}
 function couponCheck(){
 	if (coupon.value  == "COSC2430-HD"){
 		coupon.style.backgroundColor = "#99FFC6"
@@ -152,10 +160,10 @@ function updateTotal() {
     document.getElementsByClassName('tax')[0].textContent = '$' + tax
     document.getElementsByClassName('delivery')[0].textContent = '$' + delivery
 	if(couponCheck() == 1){
-		total = total-(total/20)
+		total = total-(total/100*20)
 	}
 	if(couponCheck() == 2){
-		total = total-(total/10)
+		total = total-(total/100*10)
 	}
 	document.getElementsByClassName('total')[0].textContent = '$' + total
 
