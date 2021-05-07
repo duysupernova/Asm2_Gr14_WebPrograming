@@ -10,7 +10,15 @@ function checkAllValidation(errMsgCont) {
     }
     return true;
 }
-
+function validateContactDay{
+	var boxes = getElementsbyClass("checkboxInput")
+	for (var box in boxes){
+		if box.checked ===true{
+			return true;
+		}
+	}
+	return false;
+}
 function validateEmail(email) {
     let EmailErrList = [];
     if (!(isValidEmail(email))) {
