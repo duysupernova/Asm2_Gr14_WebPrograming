@@ -9,11 +9,13 @@
   }
 
 .popup_cookies{
+    animation-name: mymove;
+    animation-duration: 3s;
     box-sizing: border-box;
     position: fixed;
     bottom: 60px;
     right: 30px;
-    background: rgb(255, 245, 245);
+    background: rgb(255, 255, 255);
     width: 350px;
     height: 350px;
     border-radius: 45px;
@@ -25,7 +27,11 @@
     justify-content: center;
     align-items: center;
 }
+ @keyframes mymove{
+     from {bottom: -300px;}
+     to{bottom: 60px;}
 
+ }
 .hide{
     display: none;
     transition: all 0.1s ease;
