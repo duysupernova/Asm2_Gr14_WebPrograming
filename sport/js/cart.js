@@ -3,6 +3,8 @@ var productInfo = document.getElementsByClassName('product-info')
 var order = document.getElementsByClassName('order')[0]
 var coupon = document.getElementsByClassName('coupon')[0]
 var products = ["The Speed", "The Strong"]
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
 updateCart()
 updateTotal()
@@ -16,11 +18,18 @@ coupon.addEventListener('change',() => {
      updateTotal();
      couponError();    
 });
-
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 function couponError(){
 	if(couponCheck()==0){
-		alert("INVALID COUPON CODE!")
+		modal.style.display = "block";
 	}
 }
 function couponCheck(){
