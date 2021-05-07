@@ -23,6 +23,18 @@ function validateContactDay(boxes){
     return dayErrList;
 }
 
+function validateContactMethod(methods){
+    let methodErrList = [];
+    for(let b = 0; b < methods.length; b++){
+        let method = methods[b];
+        if (method.checked === true){
+			return methodErrList;
+		}
+	}
+    methodErrList.push("Please check at least one method.");
+    return methodErrList;
+}
+
 function validateTextarea(txt){
     let textErrList = [];
     let txtLength = txt.value.length;

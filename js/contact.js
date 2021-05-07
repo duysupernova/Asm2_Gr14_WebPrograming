@@ -3,20 +3,24 @@ function contactValidation (){
     let email=document.getElementById("txtEmail").value;
     let name=document.getElementById("txtUserName").value;
     let phone=document.getElementById("txtPhone").value;
-	var contactBoxes = document.getElementsByClassName("checkboxInput");
-    var textArea = document.getElementById('mess');
+	let contactBoxes = document.getElementsByClassName("checkboxInput");
+    let textArea = document.getElementById('mess');
+    let contactMethod = document.querySelectorAll('.radioInput');
+
     let errMsg = {
         ulEmail: [],
         ulName: [],
         ulPhone: [],
         ulDay: [],
-        ulTxtArea: []
+        ulTxtArea: [],
+        ulContactMethod: []
     }
     let resultEmail = validateEmail(email);
     let resultName = validateName(name);
     let resultPhone = validatePhoneNumber(phone);
     let resultDay = validateContactDay(contactBoxes);
     let resultTxtArea = validateTextarea(textArea);
+    let resultContactMethod = validateContactMethod(contactMethod);
 
     if (resultEmail.length > 0) {
         errMsg.ulEmail.push(resultEmail[0]);
@@ -36,6 +40,10 @@ function contactValidation (){
 
     if (resultTxtArea.length > 0) {
         errMsg.ulTxtArea.push(resultTxtArea[0]);
+    }
+
+    if (resultContactMethod.length > 0) {
+        errMsg.ulContactMethod.push(resultContactMethod[0]);
     }
 
     displayValidation(errMsg);
