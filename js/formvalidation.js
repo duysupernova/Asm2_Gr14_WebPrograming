@@ -78,6 +78,7 @@ function validateZipCode(userZipCode) {
 
 // Regular expression
 function isValidEmail(uemail) {
+<<<<<<< Updated upstream
 	let reg = /^([A-Za-z0-9_\-\.]{3})+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 	let lastReg =  /^([A-Za-z]{2,5})/
 	let domain = uemail.split("@")[1]
@@ -103,9 +104,57 @@ function isValidEmail(uemail) {
 		return false
 	}
 
+=======
+	var reg = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)/;
+	var lastReg =  /^([A-Za-z]{2,5})$/
+	
+    if (reg.test(uemail) == false) 
+        {
+			console.log("4")
+            return false;
+        }
+
+	var domain = uemail.split("@")[1]
+	var name = uemail.split("@")[0]
+	if (!domain.includes(".")){
+		return false
+	}
+	if(name.length < 3){
+	    return false;
+	}
+	if ( name[name.length -1] == "."){
+		return false;
+	}
+	var domainSplit = domain.split(".")
+	var lastDomain = domain.split(".")[domainSplit.length-1]
+	console.log(lastDomain)
+	if(uemail[(uemail.length-1)] == "."){
+			console.log("3")
+			return false;
+		}
+	if(uemail[0] == "."){
+			console.log("2")
+			return false;
+
+		}
+	for (var i = 0; i < uemail.length ; i++){
+			if( i >0 ){
+				if(uemail[i] == "." && uemail[i-1] == "."){
+					console.log("1")
+					return false;
+
+				}
+			}
+		}
+
+	if (lastReg.test(lastDomain) == false){
+		return false
+	}
+>>>>>>> Stashed changes
         return true;
 
 }
+
 
 function isValidName(name) {
     let validName = new RegExp("^[a-zA-Z]{3,}$");
