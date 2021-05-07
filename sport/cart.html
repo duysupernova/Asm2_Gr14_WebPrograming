@@ -5,14 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="Khang Tran s3855823">
-    <title>Asport | Cart</title>
+    <title>BOX | CART</title>
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type ="text/css" href="../css/cookies.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/headerandfooter.css" />
     <script src="https://kit.fontawesome.com/13954ad90d.js" crossorigin="anonymous"></script>
-  </head>
-  
-  <body>
+</head>
+
+<body>
     <div class="header">
         <!-- Header -->
         <header>
@@ -23,7 +24,6 @@
                         <div class = "icon">
                             <i id = "ham" class="fas fa-bars"></i>
                         </div>
-                        
                     </label>
                     <input type="checkbox" id="inpNavToggle" />
                     <nav class="nav">
@@ -31,95 +31,66 @@
                         <a class="link" href="aboutus.html">About us</a>
                         <a class="link" href="product.html">Product</a>
                         <a class="link" href="contact.html">Contact</a>
+
                     </nav>
                 </div>
             </div>
-        </header>
-        <!-----Cart----->
+        </header>   
+
+        <!-- CART -->
         <div class="container-cart">
-            <table>
+            <table class = "cart">
                 <tr>
                     <th>Product</th>
                     <th>Quanity</th>
                     <th>Subtotal</th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="info">
-                            <img src="img/product/4.png">
-                            <div>
-                                <h1>
-                                    The Speed
-                                </h1>
-                                <p>
-                                    price: 70$
-                                </p>
-                            </div>
-
-
-                        </div>
-                    </td>
-                    <td><input type="number" value="1" style="
-                        border-radius: 10px;
-                        text-align: center;
-                        width: 30%;">
-                    </td>
-                    <td>$70</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="info">
-                            <img src="img/product/5.png">
-                            <div>
-                                <h1>
-                                    The Strong
-                                </h1>
-                                <p>
-                                    price: 60$
-                                </p>
-                            </div>
-
-
-                        </div>
-                    </td>
-                    <td><input type="number" value="1" style="
-                        border-radius: 10px;
-                        text-align: center;
-                        width: 30%;">
-                    </td>
-                    <td>$60</td>
-                </tr>
+                
             </table>
             <div class="total-price">
                 <table>
                     <tr>
-                        <td>Subtotal</td>
-                        <td>$130</td>
+                        <td >Subtotal</td>
+                        <td class = "sub-total">$130</td>
                     </tr>
                     <tr>
-                        <td>Tax</td>
-                        <td>$13</td>
+                        <td >Tax</td>
+                        <td class = "tax">$13</td>
                     </tr>
                     <tr>
                         <td>Delivery</td>
-                        <td>$5</td>
+                        <td class = "delivery">$5</td>
+                    </tr>
+					<tr>
+                        <td>COUPON</td>
+                        <td><input class = "coupon"  type="text">
+						</td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">TOTAL</td>
-                        <td style="font-weight: bold;">$148</td>
+                        <td style="font-weight: bold;" class = "total">$148</td>
                     </tr>
                 </table>
 
             </div>
             <div class="buttons">
                 <a href="product.html" class="button">Continue Shopping</a>
-                <a href="thankyou.html" class="button1">Order</a>
+                <a href="thankyou.html" class="button1 order">Order</a>
             </div>
-            
-
         </div>
     </div>
-    </div>
+	 <!--Cookies-->
+    <div class="popup_cookies">
+        <img src="../New_products/cookie.gif" alt="A cookie">
+        <div class="cookies_content">
+          <h1>We use Cookies!</h1>
+          <p>This website use cookies to help us maintain the functioning. By continuing browsing, you consent to use our use of cookies and other technologies.</p>
+          <div class="cookies_buttons">
+            <button class="learn_more">I agree</button>
+            <a href="https://gdpr-info.eu/" class="learn_more">GDPR</a>
+          </div>
+        </div>
+      </div>
     <footer>
         <a class="footer-link" href="footerContents/copyright.html">
             <i class="far fa-copy"></i>
@@ -134,5 +105,9 @@
             <span class="des">Privacy policy</span>
         </a>
     </footer>
+
 </body>
+	  <script type="text/javascript" src="../js/cookies.js"></script>
+<script src ="./js/cart.js" ></script>
+
 </html>

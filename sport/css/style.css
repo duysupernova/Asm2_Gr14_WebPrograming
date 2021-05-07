@@ -317,3 +317,38 @@ td{
 #home{
     width: 60%;
 }
+
+.price{
+    display: inline-block;
+}
+
+#add-button{
+    cursor: pointer;
+}
+#card {
+    position: absolute;
+    background-color: #00000;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 10rem;
+    border-radius: 5px; 
+    visibility: hidden;
+  }
+
+.show {
+    animation:  fadeIn 1s;
+
+}
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+ .coupon{
+	border-radius: 5px;
+	text-align: center;
+	width: 50%;
+	height: 2rem;
+	border-width = 3px
+ }
