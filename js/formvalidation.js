@@ -1,7 +1,5 @@
 'use strict';
 
-let phone = document.getElementById("txtPhone")
-
 function checkAllValidation(errMsgCont) {
     const successMsg = "Success";
     for (let errContName in errMsgCont) {
@@ -23,16 +21,12 @@ function validateEmail(email) {
 
 function validatePhoneNumber(phoneNvm) {
     let PhoneErrList = [];
-    console.log((isValidPhone1(phoneNvm)));
-    console.log((isValidPhone2(phoneNvm)));
-    console.log((isValidPhone3(phoneNvm)));
     if ((isValidPhone1(phoneNvm))|
         (isValidPhone2(phoneNvm))|
         (isValidPhone3(phoneNvm))){
             return PhoneErrList;
         }
-
-    PhoneErrList.push("Invalid phone number. Please check again3.");
+    PhoneErrList.push("Invalid phone number. Please check again.");
     return PhoneErrList;
 }
 
@@ -84,7 +78,7 @@ function validateZipCode(userZipCode) {
 
 // Regular expression
 function isValidEmail(uemail) {
-    return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/.test(uemail));
+    return (/^((([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))){3,}@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/.test(uemail));
 }
 
 function isValidName(name) {
@@ -94,18 +88,15 @@ function isValidName(name) {
 
 
 function isValidPhone1(phone){
-    let validphone1 = new RegExp("^([0-9]{9,11})$");
-    return (validphone1.test(phone));
+    return (/^([0-9]{9,11})$/.test(phone));
 }
 
 function isValidPhone2(phone){
-    let validphone2 = new RegExp("^([0-9]+\W){9}[0-9]$");
-    return (validphone2.test(phone));
+    return (/^([0-9]+\W){9}[0-9]$/.test(phone));
 }
 
 function isValidPhone3(phone){
-    let validphone3 = new RegExp("^([0-9]+\W){2}([0-9]{4})");
-    return (validphone3.test(phone));
+    return (/^([0-9]+\W){2}([0-9]{4})/.test(phone));
 }
 
 function isAtLeastThreeChr(formValue) {
