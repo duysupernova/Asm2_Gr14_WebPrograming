@@ -1,20 +1,56 @@
 var button = document.getElementById("add-button")
 var buyButton = document.getElementById("buy-button")
 var products = ["The Speed", "The Strong"]
+var modal = document.getElementById("myModal");
 
+var span = document.getElementsByClassName("close")[0];
+if(!loggedIn()){
+	if(button){
+		button.onclick = function() {
+		  modal.style.display = "block";
+		}
+	}
+	if(buyButton){
+		buyButton.onclick = function() {
+		  modal.style.display = "block";
+		  return false
+		}
+	}
+	document.getElementsByClassName('cart-number')[0].onclick = function(){
+	  modal.style.display = "block";
+	  return false
+	}
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 cartNumber()
-if(button){
+if(button&& loggedIn()){
 	button.addEventListener('click',() => {    
     cartUpdate()
     popUp()
 });}
 
-if(buyButton){
+if(buyButton&& loggedIn()){
 	buyButton.addEventListener('click',() => {    
     cartUpdate()
 });
 }
 
+function loggedIn(){
+	for (var i in localStorage) {
+        if (i== "userCurrentId" ){
+				return true
+			}
+		}
+		return false
+
+	}
 function cartNumber(){
 	var num = 0
 	for (var i in localStorage) {
@@ -23,7 +59,6 @@ function cartNumber(){
             num += parseInt(string.split(",")[1])
 		}
 	}
-	console.log(document.getElementsByClassName('cart-number')[0].innerText)
 	document.getElementsByClassName('cart-number')[0].innerHTML = `${num}<img src = "img/cart.png" class = "cart-icon">`
 	var icon = document.getElementsByClassName("cart-icon")[0]
 	if(num < 10){
@@ -63,4 +98,3 @@ function popUp() {
 
 
   }
-  
