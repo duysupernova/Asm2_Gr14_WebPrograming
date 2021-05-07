@@ -17,16 +17,16 @@ body {
     font-family: body, Times, serif;
     }
 
-h1, h2, h3 {
+#content h1, h2, h3 {
     font-family: title, Times, serif;
 }
 
-h1 {
+#content h1 {
   text-align: center;
   background-image: white;
-  font-size: 50px;
+  font-size: 30px;
   color: black;
-  padding: 60px;
+  padding: 40px;
 }
 
 .sub-title{
@@ -82,7 +82,7 @@ details > summary::after {
   font-size: 35px;
 
 }
-p{
+#content p{
   font-size: 20px;
   
 }

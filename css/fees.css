@@ -25,18 +25,18 @@ body{
   background-size: cover;
   }
 
-h1, h2 {
+#fees_table h1, #fees_table h2 {
   font-family: title, Times, serif;
 }
 
-h1 {
+#fees_table h1 {
   text-align: center;
   background-image: white;
   font-size: 50px;
   color: black;
   padding: 60px;
 }
-h2 {
+#fees_table h2 {
   text-align: center;
   background-image: white;
   font-size: 30px;

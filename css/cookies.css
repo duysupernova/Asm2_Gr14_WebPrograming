@@ -1,60 +1,70 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-}
+@font-face {
+    font-family: title;
+    src: url(../fonts/ProzaLibre-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: body;
+    src: url(../fonts/OpenSans-Regular.ttf);
+  }
 
-body{
-    background: rgb(197, 191, 191);
-}
 .popup_cookies{
-    position: absolute;
-    bottom: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 60px;
     right: 30px;
-    background: #fff;
-    max-width: 365px;
-    border-radius: 15px;
+    background: rgb(255, 245, 245);
+    width: 350px;
+    height: 350px;
+    border-radius: 45px;
     text-align: center;
     padding: 25px 25px 30px 25px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.popup_cookies.hide{
-    opacity: 0;
-    visibility: hidden;
+.hide{
+    display: none;
     transition: all 0.1s ease;
 }
 .popup_cookies img{
-  max-width: 90px;  
+  max-width: 90px;
 }
 
-.popup_cookies .content{
+.popup_cookies .cookies_content{
     margin-top: 10px;
 }
 
-.content header{
+.cookies_content h1{
+    font-family: title, Times, serif;
     font-size: 25px;
     font-weight: 600;
+    text-align: center;
 }
 
-.content p{
+.cookies_content p{
     color: #858585;
     margin: 5px 0 20 px 0;
 }
 
-.content .buttons{
+
+.buttons .learn_more{
+    margin: 0 10px;
+}
+/*cookies buttons*/
+.cookies_content .buttons{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.buttons .item{
-    margin: 0 10px;
-}
-
-.buttons button{
+.cookies_buttons button{
     padding: 10px 20px;
-    background: #fcba7f;
+    margin-right: 20px;
+    background: #7fe3fc;
     border: none;
     outline: none;
     font-size: 16px;
@@ -63,6 +73,6 @@ body{
     cursor: pointer;
     border-radius: 5px;
 }
-.buttons a{
-    color: #fcba7f;
+.cookies_buttons a{
+    color: #7ffce1;
 }
