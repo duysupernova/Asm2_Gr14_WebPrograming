@@ -2,7 +2,7 @@ var quantityInputs = document.getElementsByClassName('quantity')
 var productInfo = document.getElementsByClassName('product-info')
 var order = document.getElementsByClassName('order')[0]
 var coupon = document.getElementsByClassName('coupon')[0]
-
+var products = ["The Speed", "The Strong"]
 
 updateCart()
 updateTotal()
@@ -34,13 +34,18 @@ function couponCheck(){
 }
 function clearCart(){
 	for (var i in localStorage)
-		if (localStorage.getItem(i) != null){
+		if (localStorage.getItem(i) != null && products.includes(i)){
 			localStorage.removeItem(i)
 		}
 }
 function emtpyCart(){
+	var empty = true;
     var cart = document.querySelector(".cart")
-    if(localStorage.length <= 0){
+	for (var i in localStorage)
+		if (localStorage.getItem(i) != null && products.includes(i)){
+			empty = false;
+		}
+    if(empty){
         cart.innerHTML += `<tr class="product-info">
     <td>
         <h1>
@@ -64,7 +69,7 @@ function emtpyCart(){
 function updateCart() {
     var cart = document.querySelector(".cart")
     for (var i in localStorage) {
-        if (localStorage.getItem(i) != null) {
+        if (localStorage.getItem(i) != null && products.includes(i)) {
             string = localStorage.getItem(i)
             price = string.split(",")[0]
             quan = string.split(",")[1]

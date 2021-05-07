@@ -1,5 +1,7 @@
 var button = document.getElementById("add-button")
 var buyButton = document.getElementById("buy-button")
+var products = ["The Speed", "The Strong"]
+
 cartNumber()
 if(button){
 	button.addEventListener('click',() => {    
@@ -16,7 +18,7 @@ if(buyButton){
 function cartNumber(){
 	var num = 0
 	for (var i in localStorage) {
-        if (localStorage.getItem(i) != null){
+        if (localStorage.getItem(i) != null && products.includes(i)){
 			string = localStorage.getItem(i)
             num += parseInt(string.split(",")[1])
 		}
