@@ -30,6 +30,7 @@
     height: 30px;
     width: 200px;
     color: whitesmoke;
+    z-index: 0;
 }
 
 @media only screen and (max-width:767px){
