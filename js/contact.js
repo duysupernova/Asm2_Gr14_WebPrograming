@@ -3,14 +3,17 @@ function contactValidation (){
     let email=document.getElementById("txtEmail").value;
     let name=document.getElementById("txtUserName").value;
     let phone=document.getElementById("txtPhone").value;
+	var contactBoxes = document.getElementsByClassName("checkboxInput");
     let errMsg = {
         ulEmail: [],
         ulName: [],
-        ulPhone: []
+        ulPhone: [],
+        ulDay: []
     }
     let resultEmail = validateEmail(email);
     let resultName = validateName(name);
     let resultPhone = validatePhoneNumber(phone);
+    let resultDay = validateContactDay(contactBoxes);
 
     if (resultEmail.length > 0) {
         errMsg.ulEmail.push(resultEmail[0]);
@@ -22,6 +25,10 @@ function contactValidation (){
 
     if (resultPhone.length > 0) {
         errMsg.ulPhone.push(resultPhone[0]);
+    }
+
+    if (resultDay.length > 0) {
+        errMsg.ulDay.push(resultDay[0]);
     }
 
     displayValidation(errMsg);

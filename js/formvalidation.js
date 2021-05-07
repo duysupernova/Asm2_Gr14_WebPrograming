@@ -11,6 +11,21 @@ function checkAllValidation(errMsgCont) {
     return true;
 }
 
+<<<<<<< Updated upstream
+=======
+function validateContactDay(boxes){
+    let dayErrList = [];
+    for(let a = 0; a < boxes.length; a++){
+        let box = boxes[a];
+        if (box.checked === true){
+			return dayErrList;
+		}
+	}
+    dayErrList.push("Please check at least one day.");
+    return dayErrList;
+}
+
+>>>>>>> Stashed changes
 function validateEmail(email) {
     let EmailErrList = [];
     if (!(isValidEmail(email))) {
@@ -83,7 +98,6 @@ function isValidEmail(uemail) {
 	
     if (reg.test(uemail) == false) 
         {
-			console.log("4")
             return false;
         }
 
@@ -100,20 +114,16 @@ function isValidEmail(uemail) {
 	}
 	var domainSplit = domain.split(".")
 	var lastDomain = domain.split(".")[domainSplit.length-1]
-	console.log(lastDomain)
 	if(uemail[(uemail.length-1)] == "."){
-			console.log("3")
 			return false;
 		}
 	if(uemail[0] == "."){
-			console.log("2")
 			return false;
 
 		}
 	for (var i = 0; i < uemail.length ; i++){
 			if( i >0 ){
 				if(uemail[i] == "." && uemail[i-1] == "."){
-					console.log("1")
 					return false;
 
 				}
