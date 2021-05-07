@@ -23,6 +23,17 @@ function validateContactDay(boxes){
     return dayErrList;
 }
 
+function validateTextarea(txt){
+    let textErrList = [];
+    let txtLength = txt.value.length;
+    if ( 50 <= txtLength &&
+        txtLength <= 500){
+            return textErrList;
+    }
+    textErrList.push("The message box must contain only 50 to 500 letters.");
+    return textErrList;
+}
+
 function validateEmail(email) {
     let EmailErrList = [];
     if (!(isValidEmail(email))) {
