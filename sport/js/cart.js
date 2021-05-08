@@ -6,6 +6,13 @@ var products = ["The Speed", "The Strong"]
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
+<<<<<<< Updated upstream
+=======
+}
+if(shop.innerText == "sport"){
+	var products = ["The Speed", "The Strong"];
+}
+>>>>>>> Stashed changes
 updateCart()
 updateTotal()
 emtpyCart()
