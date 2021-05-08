@@ -8,7 +8,6 @@ let sliderHover = false;
 let req; // request animation frame reference
 let items = [...document.querySelectorAll('.slider-item')];
 let images = [...document.querySelectorAll('.img-div')];
-let images2 = [...document.querySelectorAll('.img-div2')];
 
 
 let imgLinks = [
@@ -17,16 +16,11 @@ let imgLinks = [
     'New_products/mall3.jpg',
     'New_products/mall4.jpg',
     'New_products/mall5.jpg',
-    'New_products/mall7.jpg',
-    'New_products/mall8.jpg',
 ]
 
 // apply above images as a background to the image items
 images.forEach((image, idx) => {
     image.style.backgroundImage = `url(${imgLinks[idx]})`
-})
-images2.forEach((image, idx) => {
-    image.style.backgroundImage = `url(${imgLinks2[idx]})`
 })
 
 items.forEach(item => {
@@ -35,16 +29,19 @@ items.forEach(item => {
     slider.appendChild(clone);
     clones.push(clone);
 })
-if(items.length<4){
+if(imgLinks.length<5){
     sliderHover = true;
 }
 sliderWrap.addEventListener('mouseover', () =>{
     sliderHover = true;
 })
+if(imgLinks.length>4){
+    sliderWrap.addEventListener('mouseleave', () =>{
+        sliderHover = false;
+    })
+}
 
-sliderWrap.addEventListener('mouseleave', () =>{
-    sliderHover = false;
-})
+
 
 function getClonesWidth(){
     let width = 0;
@@ -64,7 +61,6 @@ function scrollUpdate(){
         
         if(clonesWidth + scrollPos >= sliderWidth){
             window.scrollTo({top: 1});
-            console.log("aaaaaaa")
             scrollPos = 1;
         }else if(scrollPos <= 0){
             scrollPos = sliderWidth - clonesWidth - 1

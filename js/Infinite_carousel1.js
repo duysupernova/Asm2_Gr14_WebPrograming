@@ -3,7 +3,7 @@ let slider1 = document.querySelector('.slider1');
 let clonesWidth1;
 let sliderWidth1;
 let clones1 = [];
-let scrollPos1 =1;
+let scrollPos1 =1
 let sliderHover1 = false;
 let req1; // request animation frame reference
 let items1 = [...document.querySelectorAll('.slider-item1')];
@@ -16,8 +16,8 @@ let imgLinks1 = [
     'New_products/np3.jpg',
     'New_products/np4.jpg',
     'New_products/book.jpg',
-    'New_products/book2.jpg',
-    'New_products/book3.jpg',
+    'New_products/book1.jpg',
+
 ]
 
 // apply above images as a background to the image items
@@ -25,21 +25,30 @@ images1.forEach((image, idx) => {
     image.style.backgroundImage = `url(${imgLinks1[idx]})`
 })
 
-
 items1.forEach(item => {
     let clone = item.cloneNode(true);
     clone.classList.add('clone');
     slider1.appendChild(clone);
     clones1.push(clone);
 })
-
+if(imgLinks1.length<5){
+    sliderHover1 = true;
+}
 sliderWrap1.addEventListener('mouseover', () =>{
     sliderHover1 = true;
 })
+if(imgLinks1.length>4){
+    sliderWrap1.addEventListener('mouseleave', () =>{
+        sliderHover1 = false;
+    })
+}
+if(imgLinks1.length<=4){
+    sliderWrap1.addEventListener('mouseleave', () =>{
+        sliderHover1 = true;
+    })
+}
 
-sliderWrap1.addEventListener('mouseleave', () =>{
-    sliderHover1 = false;
-})
+
 
 function getClonesWidth1(){
     let width = 0;
@@ -59,7 +68,6 @@ function scrollUpdate1(){
         
         if(clonesWidth1 + scrollPos1 >= sliderWidth1){
             window.scrollTo({top: 1});
-            console.log("aaaaaaa")
             scrollPos1 = 1;
         }else if(scrollPos1 <= 0){
             scrollPos1 = sliderWidth1 - clonesWidth1 - 1
