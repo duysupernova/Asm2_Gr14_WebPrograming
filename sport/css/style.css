@@ -16,7 +16,9 @@
     #primary { width:100%; }
     #secondary { width:100%; margin:0; border:none; }
 }
-
+.icon{
+	color: white;
+}
 *{
     margin: 0;
     padding: 0;
