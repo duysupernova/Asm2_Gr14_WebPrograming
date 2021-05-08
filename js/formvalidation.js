@@ -56,9 +56,7 @@ function validateEmail(email) {
 
 function validatePhoneNumber(phoneNvm) {
     let PhoneErrList = [];
-    if ((isValidPhone1(phoneNvm))|
-        (isValidPhone2(phoneNvm))|
-        (isValidPhone3(phoneNvm))){
+    if ((isValidPhoneNumber(phoneNvm))){
             return PhoneErrList;
         }
     PhoneErrList.push("Invalid phone number. Please check again.");
@@ -157,23 +155,50 @@ function isValidEmail(uemail) {
 
 }
 
-
 function isValidName(name) {
     let validName = new RegExp("^[a-zA-Z]{3,}$");
     return (validName.test(name));
 }
 
+function isValidPhoneNumber(phoneNvm){
+    const specialChrs = [' ', '.', '-'];
+    let copyphoneNvm = "";
+    let spcIdx = [];
+    
+    const validLetter = /^[0-9\.\-\s]+$/;
+    if(!(validLetter.test(phoneNvm))){
+        return false;
+    }
 
-function isValidPhone1(phone){
-    return (/^([0-9]{9,11})$/.test(phone));
-}
+    for (let spcChr of specialChrs){
+        if(phoneNvm.startsWith(spcChr)){
+            return false;
+        } else if (phoneNvm.endsWith(spcChr)){
+            return false;
+        }
+    }
 
-function isValidPhone2(phone){
-    return (/^([0-9]+\W){9}[0-9]$/.test(phone));
-}
+    for (let e = 0; e < phoneNvm.length; e++){
+        if (specialChrs.includes(phoneNvm[e])){
+            spcIdx.push(e);
+            copyphoneNvm += '';
+        }else{
+            copyphoneNvm += phoneNvm[e]
+        }
+    }
+    if(copyphoneNvm.length < 9 ||
+        copyphoneNvm.length > 11 ){
+        return false
+    }	
 
-function isValidPhone3(phone){
-    return (/^([0-9]+\W){2}([0-9]{4})/.test(phone));
+    for (let a = 1; a < (spcIdx.length + 1); a++){
+        let b = a - 1;
+        let idxChk = spcIdx[a] - spcIdx[b];
+        if(idxChk === 1){
+            return false;
+        }
+    }
+    return true;
 }
 
 function isAtLeastThreeChr(formValue) {
