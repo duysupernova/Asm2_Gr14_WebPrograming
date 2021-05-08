@@ -7,11 +7,9 @@ var span = document.getElementsByClassName("close")[0];
 var shop = document.getElementById("shop-name");
 if(shop.innerText == "BOX"){
 	var products = ["The Chair", "The Head"];
-
 }
 if(shop.innerText == "sport"){
 	var products = ["The Speed", "The Strong"];
-	console.log("ha")
 }
 updateCart()
 updateTotal()
