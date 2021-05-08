@@ -20,9 +20,7 @@ function loginValidation() {
     }
 
     displayValidation(errMsg);
-    console.log(checkAllValidation(errMsg));
     if (checkAllValidation(errMsg)){
-        console.log("sdf");
         localStorage.userCurrentId = userID;
         return true;
     }
