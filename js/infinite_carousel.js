@@ -8,6 +8,8 @@ let sliderHover = false;
 let req; // request animation frame reference
 let items = [...document.querySelectorAll('.slider-item')];
 let images = [...document.querySelectorAll('.img-div')];
+let images2 = [...document.querySelectorAll('.img-div2')];
+
 
 let imgLinks = [
     'New_products/mall1.jpg',
@@ -18,9 +20,13 @@ let imgLinks = [
     'New_products/mall7.jpg',
     'New_products/mall8.jpg',
 ]
+
 // apply above images as a background to the image items
 images.forEach((image, idx) => {
     image.style.backgroundImage = `url(${imgLinks[idx]})`
+})
+images2.forEach((image, idx) => {
+    image.style.backgroundImage = `url(${imgLinks2[idx]})`
 })
 
 items.forEach(item => {
@@ -29,7 +35,9 @@ items.forEach(item => {
     slider.appendChild(clone);
     clones.push(clone);
 })
-
+if(items.length<4){
+    sliderHover = true;
+}
 sliderWrap.addEventListener('mouseover', () =>{
     sliderHover = true;
 })
