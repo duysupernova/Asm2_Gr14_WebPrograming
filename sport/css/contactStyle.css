@@ -6,7 +6,9 @@
     font-family: body;
     src: url(../fonts/OpenSans-Regular.ttf);
 }
-
+.icon{
+	color:white;
+}
 :root {
     /* Colors */
     --signIn-span:#606e83;

@@ -12,9 +12,6 @@ function cookies(){
         cookieBox.classList.add("hide"); 
         //if you already accpet, then hide cookie//
     }
-    else{
-        alert("Cookie error!");
-    }
 }
 
 let checkCookie = document.cookie.indexOf("YourCookies");

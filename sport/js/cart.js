@@ -2,17 +2,14 @@ var quantityInputs = document.getElementsByClassName('quantity')
 var productInfo = document.getElementsByClassName('product-info')
 var order = document.getElementsByClassName('order')[0]
 var coupon = document.getElementsByClassName('coupon')[0]
-var products = ["The Speed", "The Strong"]
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
-
-<<<<<<< Updated upstream
-=======
-}
+var shop = document.getElementById("shop-name");
+if(shop.innerText == "BOX"){
+	var products = ["The Chair", "The Head"];
 if(shop.innerText == "sport"){
 	var products = ["The Speed", "The Strong"];
 }
->>>>>>> Stashed changes
 updateCart()
 updateTotal()
 emtpyCart()
