@@ -1,56 +1,29 @@
 var button = document.getElementById("add-button")
 var buyButton = document.getElementById("buy-button")
-var products = ["The Head", "The Chair"]
+var products = ["The Speed", "The Strong"]
 var modal = document.getElementById("myModal");
 
 var span = document.getElementsByClassName("close")[0];
-if(!loggedIn()){
-	if(button){
-		button.onclick = function() {
-		  modal.style.display = "block";
+
+if(span){
+	span.onclick = function() {
+		modal.style.display = "none";
+	  }
+	window.onclick = function(event) {
+		if (event.target == modal) {
+		  modal.style.display = "none";
 		}
-	}
-	if(buyButton){
-		buyButton.onclick = function() {
-		  modal.style.display = "block";
-		  return false
-		}
-	}
-	document.getElementsByClassName('cart-number')[0].onclick = function(){
-	  modal.style.display = "block";
-	  return false
-	}
+	  }
 }
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
 cartNumber()
-if(button&& loggedIn()){
+if(button){
 	button.addEventListener('click',() => {    
     cartUpdate()
     popUp()
-});}
+})}
 
-if(buyButton&& loggedIn()){
-	buyButton.addEventListener('click',() => {    
-    cartUpdate()
-});
-}
 
-function loggedIn(){
-	for (var i in localStorage) {
-        if (i== "userCurrentId" ){
-				return true
-			}
-		}
-		return false
-
-	}
 function cartNumber(){
 	var num = 0
 	for (var i in localStorage) {
@@ -97,4 +70,4 @@ function popUp() {
         }, 200);
 
 
-  }
+	}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../sport/css/headerandfooter.css'>
+        <link rel='stylesheet' href='../sport/css/contactStyle.css'>
+        <link rel="stylesheet" type ="text/css" href="../css/cookies.css"/>
+        <script src="https://kit.fontawesome.com/13954ad90d.js" crossorigin="anonymous"></script>
+        <title>Asport | Contact Us</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="bar-content">
+                <div class="bar-content center">
+                    <img  src="img/logo.png">
+                    <label class="bar__nav-toggle" for="inpNavToggle">
+                        <div class = "icon">
+                            <i id = "ham" class="fas fa-bars"></i>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="inpNavToggle" />
+                    <nav class="nav">
+                        <a class="link" href="index.php">Home</a>
+                        <a class="link" href="aboutus.html">About us</a>
+                        <a class="link" href="product.php">Product</a>
+                        <a class="link" href="contact.html">Contact</a>
+                        <a class="link cart-number" href="cart.php"></a>
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main id="mainReg">
+           
+            <!--Contact Form-->   
+            <section id="allFormCont">
+                <h1>Contact Us</h1>
+                <form id="registerForm" action="register.php" method="POST">
+                    <label><h3>Contact purpose</h3></label>
+                    <select id="type" name="type">
+                        <option value="2">Feedback</option>
+                        <option value="3">Employment</option>
+                    </select>
+                    <label for="email"><h3>Email:</h3></label>
+                    <input type="text" id="fName" name="fName" required>
+                    <label for="lName"><h3>Last Name:</h3></label>
+                    <input type="text" id="lName" name="lName" required>
+                    <label for="address"><h3>Address:</h3></label>
+                    <input type="text" id="address" name="address">
+                    <label for="email"><h3>Email:</h3></label>
+                    <input type="email" id="rEmail" name="rEmail" required>
+                    <label for="phoneNvm"><h3>Phone Number:</h3></label>
+                    <input type="text" id="rPhoneNvm" name="rPhoneNvm" required>
+                    <h3>Preferred contact method:</h3>
+                    <div class=radio>
+                        <input type="radio" id="prePhone" name="pre" value="prePhone" class=radioInput>
+                        <label for="prePhone" class=radioLabel>PHONE</label>
+                        <input type="radio" id="preEmail" name="pre" value="premail" class=radioInput>
+                        <label for="preEmail" class=radioLabel>EMAIL</label>
+                    </div>
+                    <label for="contactDay"><h3>Contact days</h3></label>
+                    <div class=checkbox>
+                        <input type="checkbox" id="day1" name="contactDay" value="Mon" class=checkboxInput>
+                        <label for="day1" class=checkboxLabel> Monday</label>
+                        <input type="checkbox" id="day2" name="contactDay" value="Tue" class=checkboxInput>
+                        <label for="day2" class=checkboxLabel> Tuesday</label>
+                        <input type="checkbox" id="day3" name="contactDay" value="Wed" class=checkboxInput>
+                        <label for="day3" class=checkboxLabel> Wednesday</label>
+                        <input type="checkbox" id="day4" name="contactDay" value="Thu" class=checkboxInput>
+                        <label for="day4" class=checkboxLabel> Thursday</label>
+
+                    </div>
+                    <div class=checkbox>
+                       
+                        <input type="checkbox" id="day5" name="contactDay" value="Fri" class=checkboxInput>
+                        <label for="day5" class=checkboxLabel> Friday</label>
+                        <input type="checkbox" id="day6" name="contactDay" value="Sat" class=checkboxInput>
+                        <label for="day6" class=checkboxLabel> Saturday</label>
+                        <input type="checkbox" id="day7" name="contactDay" value="Sun" class=checkboxInput>
+                        <label for="day7" class=checkboxLabel> Sunday</label>
+                    </div>
+                    <label for="mess"><h3>Message</h3> </label>
+                            <textarea id="mess" name="Message" placeholder="Leave Us A Message!"></textarea>
+                        
+
+
+                    
+                   
+
+                    <!--Below Btn-->
+                    <div id="submitBtnCont">
+                        <input type="reset" value="Clear"/>
+                        <input type="submit" value="Register"/>
+                    </div>
+                </form>
+            </section>    
+        </main>
+        <!--Cookies-->
+    <div class="popup_cookies">
+        <img src="../New_products/cookie.gif" alt="A cookie">
+        <div class="cookies_content">
+          <h1>We use Cookies!</h1>
+          <p>This website use cookies to help us maintain the functioning. By continuing browsing, you consent to use our use of cookies and other technologies.</p>
+          <div class="cookies_buttons">
+            <button class="learn_more">I agree</button>
+            <a href="https://gdpr-info.eu/" class="learn_more">GDPR</a>
+          </div>
+        </div>
+      </div>
+        <!-- Footer -->
+        <footer>
+            <a class="footer-link" href="footerContents/copyright.html">
+                <i class="far fa-copy"></i>
+                <span class="des">Copy Right</span>
+            </a>
+            <a class="footer-link" href="footerContents/tos.html">
+                <i class="fas fa-concierge-bell"></i>
+                <span class="des">ToS</span>
+            </a>
+            <a class="footer-link" href="footerContents/privacypolicy.html">
+                <i class="fas fa-user-secret"></i>
+                <span class="des">Privacy Policy</span>
+            </a>
+            
+        </footer>
+          <script type="text/javascript" src="../js/cookies.js"></script>
+    </body>
+    <script src ="./js/product.js" ></script>
+
+</html>

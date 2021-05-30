@@ -3,22 +3,36 @@ var productInfo = document.getElementsByClassName('product-info')
 var order = document.getElementsByClassName('order')[0]
 var coupon = document.getElementsByClassName('coupon')[0]
 var modal = document.getElementById("myModal");
+var notLogin = document.getElementById("login-modal");
+
 var span = document.getElementsByClassName("close")[0];
 var shop = document.getElementById("shop-name");
-if(shop.innerText == "sport"){
-	var products = ["The Speed", "The Strong"];
-}
 if(shop.innerText == "BOX"){
 	var products = ["The Chair", "The Head"];
 }
+if(shop.innerText == "sport"){
+	var products = ["The Speed", "The Strong"];
+}
+cartNumber()
 updateCart()
 updateTotal()
 emtpyCart()
 for (var i = 0; i < quantityInputs.length; i++) {
-    quantityInputs[i].addEventListener('change', quantityUpdate)
-    
+    quantityInputs[i].addEventListener('change', (e) => {    
+        quantityUpdate(e);
+        cartNumber();    
+   });
 }
-order.addEventListener('click',clearCart)
+if(notLogin){
+    order.addEventListener('click',(e) => {    
+        e.preventDefault()
+        displayLogin()
+   })
+   console.log("haha");
+}
+else{
+    order.addEventListener('click',clearCart)
+}
 coupon.addEventListener('change',() => {    
      updateTotal();
      couponError();    
@@ -36,6 +50,9 @@ function couponError(){
 	if(couponCheck()==0){
 		modal.style.display = "block";
 	}
+}
+function displayLogin(){
+    notLogin.style.display = "block";
 }
 function couponCheck(){
 	if (coupon.value  == "COSC2430-HD"){
